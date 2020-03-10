@@ -68,3 +68,58 @@ def register(request):
           return HttpResponseRedirect("/",data)
     else:
         return HttpResponse("<h1> out </h1>");
+
+
+#contact page
+@login_required(login_url="/login/")
+def contact(request):
+    res=render(request,'LandingApp/contact.html')
+    return res
+
+#about page
+def about(request):
+    res=render(request,'LandingApp/about.html')
+    return res
+
+def ChangePassword(request):
+    data={};
+    if request.method=="POST":
+        username=request.POST['username']
+        print(username)
+        if User.objects.filter(username=username).exists():
+            print("user exists");
+            usr = User.objects.get(username=username)
+            print(usr.email)
+            send_mail(
+                     'PickABook',
+                     '''We heard that you lost your PickABook password. Sorry about that!
+                    But dont worry! You can use the following link to reset your password
+                    http://localhost:8000/Generate-password?username='''+usr.username,
+
+                     'rao.avinash@gmail.com',
+                     ['rao.avinash@gmail.com'],
+                     fail_silently=False,
+                     )
+            messages.error(request, "Email has been sent check your email.")
+            return HttpResponseRedirect('/',data)
+        else:
+            messages.error(request, "Email does not exists")
+            return HttpResponseRedirect('/',data)
+    else:
+        return render(request,'LandingApp/Resetpassword.html');
+
+
+def GeneratePassword(request):
+    data={};
+    if request.method=="POST":
+        username=request.POST['username']
+        createpassword=request.POST['createpassword']
+        confirmpassword=request.POST['confirmpassword']
+        print(createpassword,username,confirmpassword)
+        user=User.objects.get(username=username)
+        user.set_password(createpassword)
+        user.save()
+        messages.error(request, "Password has been changed.")
+        return HttpResponseRedirect('/',data)
+    else:
+        return render(request,'LandingApp/generatePass.html');
