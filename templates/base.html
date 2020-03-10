@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en" dir="ltr">
+  <head>
+    {% block head %}
+
+    {% endblock %}
+    <meta charset="UTF-8">
+      <meta name="description" content="WebUni Education Template">
+      <meta name="keywords" content="Eklavya, education, creative, html">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+   <link href="{%static 'images/favicon.ico' %}" rel="shortcut icon"/>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="{% static 'css/base.css' %}"/>
+</head>
+    <body>
+      <header>
+        <div class="my-header">
+             <div class="logo">
+                <img src="{% static '/images/logo.png' %}" alt="">
+             </div>
+
+             <div class="container">
+                 <nav  class="drop">
+
+                     <a href="/">Home</a>
+                     <a href="#">About Us</a>
+                     <a href="#">Courses</a>
+                     <a href="#">News</a>
+                     <a href="#">Contact</a>
+                 </nav>
+             </div>
+
+             <div class="dropdown">
+                <a class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">{{user.email}}
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                   <li><a href="profile/myprofile?userid={{user.id}}">My Profile</a></li><p></p>
+                   <!--<a class="btn" href="/BRMapp/edit-books?bookid={{i.id}}"> Edit </a>-->
+                   <li><a href="Course?userid={{user.id}}">My Courses</a></li><br>
+                   <li><a href="profile/logout" style="border-top: 1px solid black">Sign-Out</a></li>
+                </ul>
+           </div>
+      </header>
+
+      {%block body%}
+
+      {%endblock %}
+
+       <div class="my-footer">
+        <div class="footer-logo">
+        <img src="{%static 'images/logo.png' %}" alt="stie-logo"=>
+        	</div>
+
+        	<div class="container1"><a href="#"><b>• Privacy Policy</a> <br><p></p> <a href="#">• Terms & Conditions</b></a>
+        	</div>
+
+        	<div class="container2">
+        		 <a href="https://www.facebook.com" style="margin-right: 40px"><img src="{%static 'images/fotter/facebook.png' %}" alt=""></a>
+        		 <a href="https://www.twitter.com" style="margin-right: 40px"><img src="{%static 'images/fotter/twitter.png' %}" alt=""></a>
+        		 <a href="https://www.linkedin.com"><img src="{%static 'images/fotter/linkedin.png' %}" alt=""></a>
+        	</div>
+
+        	<div class="container-footer"><b>Copyright &copy; 2020 PickABook. All right reserved</b>
+        	</div>
+
+        	<div class="container-footer1"><b>Support & Feedback: pickabook@email.com</b>
+        	</div>
+          </div>
+        	<!-- end footer-->
+</body>
+</html>
