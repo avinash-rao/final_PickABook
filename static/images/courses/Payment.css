@@ -1,0 +1,308 @@
+html,
+body {       
+        padding-top: 0px;
+        padding-bottom: 40px;
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none;   /* Chrome 6.0+, Safari 3.1+, Edge & Opera 15+ */
+        -moz-user-select: none;      /* Firefox */
+        -ms-user-select: none;       /* IE 10+ and Edge */
+        user-select: none; 
+    }
+
+
+    .pay-top{
+    position: absolute;
+    height: 85px;
+    width: 100%;
+    background: #333;
+    box-shadow: 0px 1px 4px rgba(.5, .5, 0, .5);
+    color: black; 
+    font-size: 16px;
+}
+
+#logo{
+	margin-left: 100px; 
+	margin-top: 10px;
+}
+
+#page-name{
+	margin-left: 315px;
+	margin-top: 20px;
+	color: #fff;
+	font-size: 24px;
+}
+
+/*Style for Profile DIV*/
+.profile{
+    position: absolute;
+    height: 663px;
+    width: 100%;
+    min-width: 100%;
+    margin-top: 135px;
+    background: transparent;
+}
+
+.profile-div{
+    position: absolute;
+    width: 500px; 
+    height: 550px;
+    margin-top: 10px;
+    margin-left: 220px;
+    background: #d82a4e;
+    border-radius: 10px;
+    box-shadow: 0px 1px 4px rgba(.5, .5, 0, .5);
+}
+
+#course-name{
+    text-align: center;
+    background: #d82a4e;
+    color: #fff;
+    height: 65px;
+    margin-top: 2px;
+    margin-left: 50px;
+    width: 400px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.profile-form{
+    position: absolute;
+    width: 498px;
+    height: 360px;
+    margin-top: 52px;
+    margin-left: 1px;
+    background: #fff;
+}
+
+.Payment-Method{
+	position: absolute;
+	width: 498px;
+	height: 50px;
+	margin-top: 2px;
+	margin-left: 1px;
+	background: #fff;
+	border-bottom: 2px solid gainsboro;
+	padding-bottom: 0px;
+}
+
+#change{
+	font-size: 12px;
+	color: gray;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#lab1{
+	margin-top: 15px;
+	margin-left: 47px;
+	color: #d82a4e;
+	font-weight: 600px;
+	font-size: 18px;
+}
+
+#lab2{
+	margin-top: 5px;
+	margin-left: 57px;
+	color: #999999;
+	font-weight: 600px;
+	font-size: 18px;
+}
+
+
+input[type=text], input[type=password]{
+  padding: 10px 15px;
+  width: 350px;
+  margin: 5px 0;
+  display: inline-block;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  border-radius: 10px;
+  outline: none;
+  background: gainsboro;
+}
+
+.cards{
+	position: absolute;
+	margin-top: -60px;
+	margin-left: 229px;
+	background: #fff;
+}
+
+.btn-edit{
+  font-weight: bold;
+  font-size: 17px;
+  color: #fff;
+  background: #d82a4e;
+  border-radius: 10px;
+  border: 1px solid #fff;
+  position: absolute; 
+  cursor: pointer;
+  margin-top: 21px;
+  margin-left:130px;
+  text-align: center;
+  width: 250px;
+  height: 50px;
+  outline: none;
+  text-decoration: none;
+}
+.btn-edit:hover,active{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  text-decoration: none;
+  color: #fff;
+}
+
+.btn-edit:focus
+{
+ outline: none;
+ text-decoration: none;
+ color: #fff;
+}
+/*End of Style for Profile DIV*/
+
+/*Style for Receipt Section*/
+.receipt-form{
+    position: absolute;
+    width: 392px; 
+    height: 455px;
+    margin-top: 15px;
+    margin-left: 750px;
+    background: #fff;
+    border-radius: 10px;
+    border: 2px solid #d82a4e; 
+    box-shadow: 0px 1px 4px rgba(.5, .5, 0, .5);
+}
+
+.order-details{
+	position: absolute;
+	width: 388px;
+	height: 58px;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+    border-bottom: 2px solid gainsboro;
+	outline: none;
+	background: #ededed;
+}
+
+#order{
+	margin-top: 20px;
+	margin-left: 30px;
+	font-size: 14px;
+	color: gray;
+}
+
+.c-name{
+	position: absolute;
+	width: 388px;
+	height: 75px;
+	margin-top: 59px;
+	border-bottom: 2px solid gainsboro;
+	background: #fff;
+}
+
+#c-name1{
+	margin-top: 10px;
+	margin-left: 35px;
+	width: 340px;
+	font-size: 18px;
+	color: #d82a4e;
+}
+
+.receipt{
+    position: absolute;
+    width: 388px;
+	height: 225px;
+	margin-top: 135px;
+	border-bottom: 2px solid gainsboro;
+	background: #fff;
+    
+}
+
+.sub-price{
+	margin-top: 25px;
+	color: gray;
+}
+
+.s-price{
+  color: gray;
+  width: 45px;
+  outline: transparent;
+  border: none;
+}
+
+.gst{
+  color: gray;
+  width: 20px;
+  outline: transparent;
+  border: none;
+}
+
+
+#coupon{
+	width: 160px;
+	margin-left: 67px;
+	outline: none;
+	border: none;
+	background: #fff;
+	box-sizing: border-box;
+	border-bottom: 1px solid #d82a4e;
+	border-radius: 0px;
+	text-align: left;
+}
+
+.btn-coupon{
+  font-weight: bold;
+  font-size: 12px;
+  color: #fff;
+  background: #d82a4e;
+  border-radius: 10px;
+  border: 2px solid #fff;
+  position: absolute; 
+  cursor: pointer;
+  margin-top: 15px;
+  margin-left:10px;
+  text-align: center;
+  width: 70px;
+  height: 30px;
+  outline: none;
+  text-decoration: none;
+}
+
+.btn-coupon:hover,active{
+  background: #fff;
+  color: #d82a4e;
+  border: 2px solid #d82a4e;
+  text-decoration: none;
+}
+
+hr{ 
+  height: 1px;
+  color: #d82a4e;
+  background-color: #d82a4e;
+  border: none;
+}
+
+.total{
+	color: #d82a4e;
+	font-size: 16px;
+}
+
+.t-price{
+  color: #d82a4e;
+  font-size: 16px;
+  font-weight: 600;
+  width: 58px;
+  outline: transparent;
+  border: none;
+}
+
+.info{
+	position: absolute;
+    width: 336px;
+	height: 62px;
+	margin-top: 375px;
+	margin-left: 30px;
+}
+
+.a{
+  content: 'MONTH / YEAR';
+}

@@ -1,0 +1,698 @@
+html,
+body {
+	height: 100%;
+  margin-right:0 0 0 0;
+
+  font-family: 'Raleway', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+  background-size: cover;
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none;   /* Chrome 6.0+, Safari 3.1+, Edge & Opera 15+ */
+	-moz-user-select: none;      /* Firefox */
+	-ms-user-select: none;       /* IE 10+ and Edge */
+	user-select: none;
+
+}
+
+.error{
+
+  color: red;
+	font-family: sans-serif;
+	font-weight: bold;
+	border: 1px solid red;
+
+}
+
+.header{
+
+  background-repeat: no-repeat;
+	background-size:contain, cover;
+	background-position: top center;
+  height: 540px;
+  position:absolute;
+   width: 100%;
+  height: 100%;
+  top: 0;
+	left: 0;
+	padding-top: 0px;
+	padding-bottom:240px;
+  background-image: url('../images/bg.jpg');
+	background-size: auto;
+
+}
+.logo
+{
+position: absolute;
+margin-left: 50px;
+margin-top: 50px;
+}
+
+.login-btn{
+	position: absolute;
+  left: 200px;
+}
+.site-btn{
+  display: inline-block;
+	min-width: 196px;
+	text-align: center;
+	border: none;
+	padding: 15px 10px;
+	font-weight: 600;
+	font-size: 16px;
+	position: relative;
+	color: #fff;
+	cursor: pointer;
+	background: #d82a4e;
+   border-radius: 10px;
+   position: relative;
+   left: 80px;
+
+   }
+
+.site-btn:hover
+{
+  opacity: 0.8;
+}
+.site-btn:focus
+{
+ outline:none;
+}
+.signup{
+  position: absolute;
+  left:460px;
+  bottom: 155px;
+}
+
+
+.text
+{
+position: absolute;
+left:100px;
+top:300px;
+color: #fff;
+text-align: center;
+}
+
+h2
+{  margin: 0;
+  font-size:70px;
+	font-weight: 600px;
+  font-weight: normal;
+	text-align: center;
+}
+
+
+
+img {
+	max-width: 100%;
+  max-height: 100%;
+  }
+
+.course{
+	position:relative;
+	top:870px;
+	width: 100%;
+	text-align: center;
+}
+.course h2{
+   color: #464242;
+	 margin: 0;
+	 font-size: 50px;
+	 font-weight:normal;
+	 letter-spacing: 1.7px;
+}
+
+.p-line{
+	font-size: 14.6px;
+  color: #fff;;
+  line-height: 2.0;
+	word-spacing:1.0px
+	font-weight: 500;
+}
+
+
+
+
+.course-categorie
+{
+	margin-top:750px;
+  position: absolute;
+	top:200px;
+	cursor: pointer;
+	margin-left: 10px;
+	padding-bottom: 100px;
+
+}
+.categories1
+{
+background-size: cover;
+outline: none;
+background: #edf4f6;
+padding-bottom: 33px;
+box-shadow: 0 5px #666;
+
+}
+
+.categories1:hover
+{
+outline: none;
+background-color: #d82a4e;
+-ms-transform: scale(0.1); /* IE 9 */
+  -webkit-transform: scale(0.1); /* Safari 3-8 */
+  transform: scale(1.1);
+	transition: 2s ease;
+}
+
+.ci-text{
+text-align: center;
+padding: 40px 35px;
+}
+
+.categories1.ci-text h5 {
+	margin-bottom: 5px;
+}
+
+
+.ci-text h5{
+	font-size:20px;
+	color: #2C3E50;
+	font-weight:10px;
+	margin: 0;
+	padding-bottom: 33px;
+}
+
+.ci-text span{
+	color: #2C3E50;
+	font-size: 18px;
+	font-weight: 600;
+
+}
+.categories1:hover .ci-text h5,
+.categories1:hover .ci-text span {
+	color: #fff;
+}
+
+
+
+table{
+border-collapse: collapse;
+height: 50px;
+width:100%;
+}
+
+td {
+  height: 50px;
+  vertical-align: bottom;
+
+}
+.course-link{
+	text-decoration: none;
+}
+
+th, td {
+  padding: 30px;
+  text-align: left;
+}
+td:hover{
+}
+.menu{
+
+  position:absolute;
+  top: 60px;
+	left:330PX;
+
+}
+.menu ul {
+	list-style: none;
+}
+
+.menu ul li {
+	display: inline;
+}
+
+.menu ul li a {
+	display: inline-block;
+	font-size: 16px;
+	color: #fff;
+	margin-left: 45px;
+	font-weight: 600;
+	padding: 20px 0 5px;
+}
+
+.menu ul li a:hover {
+	color:#d82a4e;
+		text-decoration: none;
+}
+
+.nav-switch {
+	display: none;
+}
+
+
+menu,a:hover {
+  color:#d82a4e;
+}
+a,
+a:hover,
+a:focus {
+	text-decoration: none;
+	outline: none;
+	color: #d82a4e;
+}
+
+
+ul,
+ol {
+	padding: 0;
+	margin: 0;
+}
+.signup-cat{
+position: relative;
+top:1000px;
+margin-top: 400px;
+}
+
+.banner-section
+{
+	position:relative;
+	top:800px;
+	margin-top: 300px;
+
+}
+
+/* teacher singnup*/
+
+
+.full-section{
+position: absolute;
+background-size: cover;
+margin-left:-8px;
+margin-right:0 auto;
+color: red;
+width:99.8%;
+height: 900px;
+margin-top: 1589px;
+
+
+}
+.signup-div
+{
+position: absolute;
+background-size: cover;
+height:890px;
+width: 630px;
+color: #fff;
+text-align: center;
+background-color:  #d82a4e;;
+
+}
+
+.img-div{
+	position: absolute;
+	background-size: 100px 300px;
+	background-image: url('../images/signup-bg.png');
+	background-repeat: no-repeat;
+ background-size: auto;
+	height: 890px;
+	margin-top: 0px;
+	margin-left: 629px;
+	width: 633px;
+	color: red;
+	}
+	.img-div img{
+
+max-width: 100%;
+	}
+.signup-img{
+	max-width: 100%;
+}
+
+.form-div{
+
+
+	position: absolute;
+	height: 500px;
+	margin-top: 70px;
+	margin-left: 107px;
+	width: 410px;
+	color: red;
+	background-color: #fff;
+}
+.signup-form input[type=text],
+.signup-form input[type=email]
+{
+
+	height: 57px;
+	width: 85%;
+	padding: 0 30px;
+	margin-top: 50px;
+	border: none;
+	border-radius: 0px;
+	font-size: 14px;
+	font-weight: 500;
+	background: #edf4f6;
+}
+.signup-form input[type=text]:focus,
+.signup-form input[type=email]:focus
+{
+
+	border-bottom: 2px solid #d82a4e;
+}
+.signup-form input[type=submit]{
+
+	margin-right:170px;
+	margin-top:20px;
+}
+
+
+
+
+
+/*login form*/
+
+/* Full-width input fields */
+input[type=text], input[type=password]
+{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 20px 0;
+  display: inline-block;
+  border: 1px solid #FAB87F;
+  box-sizing: border-box;
+  border-radius: 30px;
+}
+
+/* Set a style for all buttons */
+button
+{
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(to bottom right, #B05574, #F87E7B);
+  padding: 15px 30px;
+  border: 2px solid #FAB87F;
+  border-radius: 30px;
+  position: relative;
+  cursor: pointer;
+  top: 50%;
+  left:200px;
+}
+button:hover
+{
+  background: #FAB87F;
+  color: #fff;
+}
+
+button:focus
+{
+ outline:none;
+}
+
+/* Center the image and position the close button */
+.imgcontainer
+{
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar
+{
+  width: 15%;
+  border-radius: 50%;
+}
+
+.container
+{
+  padding: 16px;
+}
+
+input:focus
+{
+  outline: none;
+}
+
+span.psw
+{
+  float: right;
+  padding-top: 5px;
+}
+
+/* The Modal (background) */
+.modal
+{
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content
+{
+  font-weight: bold;
+  color: #fff;
+  margin: 0% auto 15% auto;  /* 5% from the top, 15% from the bottom and centered */
+  background: linear-gradient(to bottom right,#F87E7B, #B05574 );
+  padding: 15px 30px;
+  border-radius: 30px;
+  border: 1px solid #FAB87F;
+  width: 40%;  /* Could be more or less, depending on screen size */
+}
+
+
+/* The Close Button (x) */
+.close
+{
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #FAB87F;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus
+{
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate
+{
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+a:link
+{
+  text-decoration: none;
+  color: white;
+}
+
+a:hover
+{
+  text-decoration: underline;
+  color: #d82a4e;
+}
+
+@-webkit-keyframes animatezoom
+{
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom
+{
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px)
+{
+  span.psw
+  {
+     display: block;
+     float: none;
+  }
+  .cancelbtn
+  {
+     width: 100%;
+  }
+}
+
+/*  Fotter section*/
+
+
+.my-footer{
+	position: absolute;
+		margin-top: 2479px;
+		height: 120px;
+		margin-left: -9px;
+		width: 100%;
+		color:#fff;
+		background: #333;
+		border-top: 2px solid #fff;
+}
+
+.container-footer{
+		position: absolute;
+		width: 28%;
+		margin-left: 100px;
+		margin-top: 70px;
+		padding-top: 20px;
+}
+
+.container-footer1{
+		position: absolute;
+		margin-left: 830px;
+		margin-top: 70px;
+		padding-top: 20px;
+}
+
+.footer-logo{
+		position: absolute;
+		margin-top: 7px;
+		margin-left: 100px;
+		padding-bottom: 10px;
+}
+
+ .container1{
+		position: absolute;
+		width: 15%;
+		height: 60px;
+		margin-top: 7px;
+		margin-left: 1000px;
+		text-align: left;
+		padding-bottom: 5px;
+		font-size: 16px;
+}
+
+.container1 a{
+	 border: none;
+	 color: red;
+}
+
+.container1 a:hover{
+	 border: none;
+	 background: transparent;
+	 color: #fff;
+	 text-decoration: none;
+}
+
+ .container2{
+		position: absolute;
+		width: 21%;
+		height: 60px;
+		margin-top: 25px;
+		margin-left: 500px;
+		text-align: center;
+		padding-bottom: 5px;
+		transition: transform .3s;
+}
+
+.container2 :hover {
+	 transform: scale(1.3);
+	 opacity: 1;
+}
+
+/* style for popup*/
+
+
+
+.popup {
+margin: 0px auto;
+padding: 20px;
+background: #fff;
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
+border-bottom: 3px solid #d82a4e;
+border-left: 3px solid #d82a4e;
+border-right: 3px solid #d82a4e;
+width: 30%;
+transition: all 200ms ease-in-out;
+position: relative;
+}
+
+.popup h3{
+  margin-top: 0;
+  color: #d82a4e;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+	text-align: center;
+	font-size: 17px;
+	color: #d82a4e;
+	font-family:sans-serif;
+
+}
+.popup .close{
+	font-size: 28px;
+	color: #d82a4e;
+}
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup{
+    width: 70%;
+  }
+}
+
+/*Style for Dropdown*/
+.d-btn{
+	background: transparent;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+		cursor: pointer;
+}
+
+.d-btn:hover,:focus {
+    text-decoration: none;
+}
+
+.dr {
+  position: relative;
+  display: inline-block;
+	margin-left: 90px;
+}
+
+.drops {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 3px;
+  outline: none;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.drops a {
+  color: black;
+  padding: 9px 14px;
+  text-decoration: none;
+  display: block;
+}
+
+
+
+
+.show {display: block;}
