@@ -1,0 +1,96 @@
+{%extends 'base.html' %}
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	{%block  head%}
+	<title>Dashboard template</title>
+	<link rel="stylesheet" href="{%static 'css/Dashboard.css' %}"/>
+	{%endblock%}
+</head>
+ <body>
+	{%block body%}
+  <!--Profile section tags-->
+   <div class="perk">
+      <div class="perk1">
+        <label id="label1"><h3> Hi, {{user.first_name}} </h3></label><br>
+				<form class="" action="profile/edit" method="post">
+ 				 {% csrf_token%}
+        <input type="hidden" name="username" value="{{user}}">
+           <input type="submit" name="" value="EDIT PROFILE" id="btn-profile">
+					 </form>
+      </div>
+    <div class="perk2">
+        <div id="certi-perk2">
+          <img src="{% static '/images/courses/Certificate.png' %}" alt=""><br><h1><b>0</b></h1>Certificate
+        </div>
+        <div id="com-perk2">
+          <img src="{%static 'images/courses/Course.png' %}" alt=""><br><h1><b>0</b></h1>Completed
+        </div>
+
+      </div>
+    </div>
+<!--End of Profile section tags-->
+{%endblock%}
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1> Welcome in dashboard </h1>
+    {{user.username}}
+    {{user.password}}
+    {{user.first_name}}
+    {{user.last_name}}
+    {{user.email}}
+  </body>
+</html>
+-->
