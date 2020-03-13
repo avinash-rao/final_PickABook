@@ -11,9 +11,9 @@
   	<link rel="stylesheet" href="{%static 'css/font-awesome.min.css' %}"/>
 
     <link href="{%static 'images/favicon.ico' %}" rel="shortcut icon"/>
-    <link href="{%static 'css/landingpage.css' %}" rel="stylesheet" type="text/css" media="only screen and (min-device-width: 481px">
     <link rel="stylesheet" href="{%static 'css/login.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/animate-custom.css' %}" />
+    <link href="{%static 'css/landingpage.css' %}" rel="stylesheet" type="text/css" media="only screen and (min-device-width: 481px">
     <script  type="text/javascript" charset="utf-8" src="{%static '/javascript/myscripts.js'%}"></script>
     <script type="text/javascript" charset="utf-8" src="{%static  '/javascript/validate.js' %} "></script>
    <!-- end link-->
@@ -27,34 +27,36 @@
 <body>
   <!-- start  header -->
    <header class="header">
-   <div class="logo">
-     <img src="{%static 'images/logo.png' %}" alt="stie-logo" width="50px">
-   </div>
+     <div class="logo">
+       <img src="{%static 'images/logo.png' %}" alt="stie-logo" width="50px">
+     </div>
       <nav class="menu">
-      <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="about" class="drp">About us</a></li>
-            <li><a href="courses.html" class="drp" >Books</a></li>
-            <li><a href="blog.html" class="drp">News</a></li>
-            <li><a href="contact" class="drp">Contact</a></li>
-             {% if user.is_authenticated %}
+        <ul>
+              <li><a href="">Home</a></li>
+              <li><a href="about" class="drp">About us</a></li>
+              <li><a href="courses.html" class="drp" >Books</a></li>
+              <li><a href="blog.html" class="drp">News</a></li>
+              <li><a href="contact" class="drp">Contact</a></li>
+              {% if user.is_authenticated %}
               <div class="dr">
-                   <a  onclick="myFunction()" class="d-btn">{{user.email}} <span>▼</span> </a>
-                   <div id="my" class="drops">
-                   <a id="drp" href="profile">My Profile</a></li>
-                   <a id="drp" href="Course?userid={{user.id}}">My Courses</a></li><br>
-                   <a id="drp" href="profile/logout" style="border-top: 1px solid black">Sign-Out</a>
-                  </div>
-               </div>
-
+                <a  onclick="myFunction()" class="d-btn">{{user.email}} <span>▼</span> </a>
+                <div id="my" class="drops">
+                  <a id="drp" href="profile">My Profile</a></li>
+                  <a id="drp" href="Course?userid={{user.id}}">My Courses</a></li><br>
+                  <a id="drp" href="profile/logout" style="border-top: 1px solid black">Sign-Out</a>
+                </div>
+              </div>
               {% else %}
-                  <li>
-                  <input type="button" value="Login" class="site-btn"  onclick="document.getElementById('id01').style.display='block'" style="width:auto;"  />
-                  </li>
+              <li>
+                <input type="button" value="Login" class="site-btn"  onclick="document.getElementById('id01').style.display='block'" style="width:auto;"  />
+              </li>
               {%endif%}
-              
-      </ul>
+        </ul>
      </nav>
+     <div class="nav-search">
+       <input type="text" placeholder="Search...">
+       <div class="search"></div>
+     </div>
                     <!-- shows server error -->
                         {% if messages %}
                           {% for message in messages %}
@@ -62,11 +64,11 @@
                                <div class="popup">
                                   <span class='close' onclick='this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode); return false;'>x</span>
                                   <h3 class="head">Info</h3>
-                              <div class="content">
+                               <div class="content">
                                 <h4> {{message|capfirst}}  </h4>
                                 </div>
                                </div>
-                             </div
+                             </div>
                           {% endfor %}
                       {% endif %}
                         <!--end server -->
