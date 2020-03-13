@@ -7,7 +7,6 @@ from django.contrib import messages
 from django.core.mail import send_mail
 # Create your views here.
 
-
 #HomePage
 def firstpage(request):
     res = render(request,'LandingApp/firstpage.html')

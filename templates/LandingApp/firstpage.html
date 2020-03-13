@@ -34,7 +34,7 @@
       <ul>
             <li><a href="">Home</a></li>
             <li><a href="about" class="drp">About us</a></li>
-            <li><a href="courses.html" class="drp" >Courses</a></li>
+            <li><a href="courses.html" class="drp" >Books</a></li>
             <li><a href="blog.html" class="drp">News</a></li>
             <li><a href="contact" class="drp">Contact</a></li>
              {% if user.is_authenticated %}
@@ -48,10 +48,11 @@
                </div>
 
               {% else %}
-              <li>
-              <input type="button" value="Login" class="site-btn"  onclick="document.getElementById('id01').style.display='block'" style="width:auto;"  />
-              </li>
+                  <li>
+                  <input type="button" value="Login" class="site-btn"  onclick="document.getElementById('id01').style.display='block'" style="width:auto;"  />
+                  </li>
               {%endif%}
+              
       </ul>
      </nav>
                     <!-- shows server error -->
@@ -228,9 +229,9 @@
             <div class="ci-text">
               <h5>Python for Everybody</h5>
               <span>60 Lectures</span>
-              </div>
-      </div>
-       </a>
+            </div>
+        </div>
+   </a>
 </td>
          <td>
             <a href="Course/java" style="text-decoration: none;">
