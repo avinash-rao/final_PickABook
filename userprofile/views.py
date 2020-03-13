@@ -12,11 +12,7 @@ def dashboard(request):
     if request.method=="GET":
       res=render(request,'userprofile/dashboard.html')
       return res
-<<<<<<< HEAD
-
-=======
       
->>>>>>> develop
 #profile editing page
 @login_required(login_url="/login/")
 def edit(request):
