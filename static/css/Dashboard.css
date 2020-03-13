@@ -1,0 +1,158 @@
+html,
+body{
+
+}
+/*Style for Edit Profile and Course & Certificate Counter DIV*/
+/*Style for Footer Section*/
+    .my-footer{
+      width: 100%;
+      position: fixed;
+      background: #333;
+      padding: 10px 0;
+      color: #fff;
+      margin-top: 760px;
+      height: 120px;
+      border-top: 2px solid #d82a4e;
+    }
+
+    .container-footer{
+        position:absolute;
+        width: 25%;
+        margin-left: 100px;
+        margin-top: 60px;
+        padding-top: 20px;
+    }
+
+    .container-footer1{
+        position:absolute;
+        margin-left: 938px;
+        margin-top: 60px;
+        padding-top: 20px;
+    }
+
+    .footer-logo{
+        position: absolute;
+        margin-top: 0px;
+        margin-left: 100px;
+        padding-bottom: 10px;
+    }
+
+     .container1{
+        position: absolute;
+        width: 15%;
+        height: 60px;
+        margin-top: 0px;
+        margin-left: 1068px;
+        text-align: left;
+        padding-bottom: 5px;
+        font-size: 16px;
+    }
+
+    .container1 a:hover{
+       border: none;
+       background: transparent;
+       color: #fff;
+    }
+
+     .container2{
+        position: absolute;
+        width: 21%;
+        height: 60px;
+        margin-top: 25px;
+        margin-left: 550px;
+        text-align: center;
+        padding-bottom: 5px;
+        transition: transform .3s;
+    }
+
+    .container2 :hover {
+       transform: scale(1.3);
+       opacity: 1;
+    }
+
+
+/*End of Footer section*/
+.perk{
+    position: absolute;
+    top:137px;
+    width: 100%;
+    height: 384px;
+    background: #fff;
+}
+
+/*Style for Edit Profile DIV*/
+.perk1{
+    position: absolute;
+    width: 25%;
+    margin-left: 40px;
+    margin-top: 68px;
+    padding-bottom: 10px;
+    background: #fff;
+    text-align: center;
+}
+
+/*Style for Profile Button*/
+
+#btn-profile{
+    background: #d82a4e;
+    outline: none;
+    border-radius: 10px;
+    height: 35px;
+    width: 150px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border-color: transparent;
+
+}
+
+#btn-profile:hover {
+    background: rgb(250, 184, 127);
+    color: #d82a4e;
+    background: #fff;
+    border: 2px solid #d82a4e;
+}
+
+/*Style for Name Label*/
+
+#label1{
+    color: black;
+    font-weight: 800;
+    font-size: 18px;
+}
+
+/*End Style for Edit Profile DIV*/
+
+/*Style for Course & Certificate Counter DIV*/
+
+#certi-perk2{
+    position: absolute;
+    width: 15%;
+    margin-left: 530px;
+    padding-top: 35px;
+    background: #fff;
+    text-align: center;
+    color: black;
+    font-size: 18px;
+}
+
+#com-perk2{
+    position: absolute;
+    width: 15%;
+    margin-left: 800px;
+    padding-top: 33px;
+    background: #fff;
+    text-align: center;
+    color: black;
+    font-size: 18px;
+}
+
+/*End of Style for Edit Profile and Course & Certificate Counter DIV*/
+
+
+/*form-section */
+
+.formsection{
+
+  border:1px solid red;
+}
