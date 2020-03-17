@@ -205,15 +205,15 @@ margin-top: 50px;
 
 .text
 {
-position: absolute;
-left:20%;
+position: relative;
+margin:0;
 top:320px;
 color: #fff;
 text-align: center;
 }
 
 h2
-{  margin: 0;
+{  margin:0;
   font-size:70px;
 	font-weight: 600px;
   font-weight: normal;
