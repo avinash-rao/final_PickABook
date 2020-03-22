@@ -520,6 +520,7 @@ button:hover
   color: #fff;
 }
 
+
 button:focus
 {
  outline:none;
@@ -618,10 +619,9 @@ span.psw
 .close
 {
   position: absolute;
-  right: 25px;
+  right: 0px;
   top: 0;
   color: #FAB87F;
-  font-size: 35px;
   font-weight: bold;
 }
 
@@ -630,6 +630,13 @@ span.psw
 {
   color: red;
   cursor: pointer;
+}
+.sub 
+{
+    padding: 8px;
+    background-color: aqua;
+    border-radius: 20px;
+    
 }
 
 /* Add Zoom Animation */
