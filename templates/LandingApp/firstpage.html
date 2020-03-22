@@ -48,7 +48,7 @@
               </div>
               {% else %}
               <li>
-                <input type="button" value="Login" class="site-btn"  onclick="document.getElementById('id01').style.display='block'" style="width:auto;"  />
+                <input type="button" value="Login" id="myBtn" class="site-btn" />
               </li>
               {%endif%}
         </ul>
@@ -72,18 +72,20 @@
                           {% endfor %}
                       {% endif %}
                         <!--end server -->
-<!--Login form code-->
-<div class="container">
-    <section>
-        <div class="container_demo" id="id01">
-            <a class="hiddenanchor" id="toregister"></a>
-            <a class="hiddenanchor" id="tologin"></a>
-            <div id="wrapper">
-                <div id="login" class="animate form">
-                  <!--login start-->
+    
+    
+    <!--Login Modal-->
+    
+    
+    <!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content animate">
+   <!--login start-->
                     <form  action="login"  method="post" autocomplete="on"  name="loginform">
                         {% csrf_token %}
-                        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close">&times;</span>
+                        <span class="close" title="Close">&times;</span>
                         <h1>LOG IN</h1>
                         <p>
                             <label for="mail" class="uname"> Email </label>
@@ -95,27 +97,31 @@
                         </p>
                         <p class="keeplogin">
                           <input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" />
-                          <label for="loginkeeping">Keep me logged in</label>
+                          <label id="sub" for="loginkeeping">Keep me logged in</label>
+                        </p>
+                        <p class="REGISTER">
+                        
                         </p>
 
                       <p class="login button">
                         <a href="/Reset-password" style="color: #fff; padding: 1.3rem 0 0 0; float: left">Forgot Passsword</a>
-                        <input type="submit" value="LOGIN"/>
+                        <input type="submit" class="sub" value="LOGIN"/>
                       </p>
 
-                      <p class="change_link">
-                        Not a member yet ?
-                        <a href="#toregister" class="to_register">Join us</a>
-                      </p>
+                      
                <!--login end-->
-                    </form>
-                </div>
-                <p>
-                  <div id="register" class="animate form">
-                  <!-- signup starts -->
-                    <form  action="/Landingapp/register"  method="post" autocomplete="on">
+                    </form>  </div>
+
+</div>
+<!--Login form code-->
+<div id="myModal1" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content animate">
+   <!--login start-->
+                     <form  action="/Landingapp/register"  method="post" autocomplete="on">
                         {% csrf_token %}
-                        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close">&times;</span>
+                        <span class="close1" title="Close">&times;</span>
                         <h1> SIGN UP </h1>
                         <p>
                             <label for="name" class="name"> Name</label>
@@ -140,42 +146,15 @@
                         <p class="signin button">
  <input type="submit" value="SIGN UP"/>
 </p>
-                        <p class="change_link">  Already a member ?
- <a href="#tologin" class="to_register"> Go and log in </a>
-</p>
+                       
                     </form>
                  <!--signup end-->
 
-                </div>
-
-            </div>
-        </div>
-    </section>
-</div>
-<div class="modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Modal body text goes here.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
   </div>
+
 </div>
 
-
-
-<!--  login end -->
-
+    
 <!-- hero section-->
 
 
@@ -349,6 +328,46 @@
 
 </div>
 <!-- end footer-->
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+var modal1 = document.getElementById("myModal1");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+var rnd = document.getElementById("random");
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+    var sbmt =document.getElementById("sub");
+var span1 = document.getElementsByClassName("close1")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+sbmt.onclick = function(){
+    modal.style.display = "none";
+    modal1.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+span1.onclick = function() {
+  modal1.style.display = "none";
+}
+
+rnd.onclick = function(){
+modal.style.display = "none";
+}
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal1) {
+    modal.style.display = "none";
+  }
+}
+</script>
 
   </body>
 <!-- end body -->
