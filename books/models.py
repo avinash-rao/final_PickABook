@@ -4,8 +4,14 @@ from django.db import models
 class Author(models.Model):
     author_name = models.CharField('Author', max_length=40, primary_key=True)
 
+    def __str__(self):
+        return self.author_name
+
 class Publisher(models.Model):
     publisher_name = models.CharField('Publisher', max_length=40, primary_key=True)
+
+    def __str__(self):
+        return self.publisher_name
 
 class Genre(models.Model):
     """Model representing a book genre."""

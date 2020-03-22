@@ -190,9 +190,8 @@ margin-top: 50px;
 
 .site-btn:hover
 {
-  opacity: 0.8;
-    
-    -webkit-transition: opacity 0.8s;
+  opacity: 0.8;  
+  -webkit-transition: opacity 0.8s;
 }
 .site-btn:focus
 {
