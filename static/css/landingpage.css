@@ -185,14 +185,14 @@ margin-top: 50px;
    border-radius: 10px;
    position: relative;
    left: 80px;
-
+-webkit-transition: opacity 0.8s;
    }
 
 .site-btn:hover
 {
   opacity: 0.8;
-    transition:0.8s;
-    box-shadow: 2px 2px 22px crimson ,2px 4px 34px white;
+    
+    -webkit-transition: opacity 0.8s;
 }
 .site-btn:focus
 {
