@@ -231,14 +231,11 @@ a:focus {
 
 input[type=text], input[type=password]{
   padding: 10px 15px;
-  width: 350px;
-  margin: 5px 0;
+  width: 20vw;
   display: inline-block;
-  border: 1px solid transparent;
-  box-sizing: border-box;
-  border-radius: 10px;
+  border: 0;
   outline: none;
-  background: gainsboro;
+  background: transparent;
 }
 
 .btn-edit{
