@@ -79,6 +79,7 @@ def contact(request):
 def about(request):
     res=render(request,'LandingApp/about.html')
     return res
+
 #Books page
 def bookss(request):
     res=render(request,'LandingApp/bookss.html')
