@@ -5,7 +5,7 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 
 from django.contrib.auth.decorators import login_required
-
+from .models import Book
 from .forms import BookForm
 
 # Create your views here.
@@ -30,3 +30,10 @@ def addBook(request):
         form = BookForm()
 
     return render(request, 'books/addbook.html', {'form': form})
+
+def book_detail(request, book_id):
+    #add if condition or exists function
+    print(book_id, flush=True)
+    book = Book.objects.get(pk=book_id)
+    context = {'book':book, }
+    return render(request, 'books/book_detail.html', context)
