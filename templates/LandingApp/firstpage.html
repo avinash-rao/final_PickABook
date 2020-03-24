@@ -85,7 +85,7 @@
   <!-- Modal content -->
   <div class="modal-content animate">
    <!--login start-->
-                    <form  action="login"  method="post" autocomplete="on"  name="loginform">
+                    <form  action="login"  method="post" autocomplete="off"  name="loginform">
                         {% csrf_token %}
                         <span class="close" onclick="document.getElementById('myModal').style.display='none'" title="Close">&times;</span>
                         <h1 class="h1">LOG IN</h1>
@@ -103,14 +103,14 @@
                         </p>
 
 
-                       
-                      
-                        
+
+
+
                         <a href="/Reset-password" style="color: #fff; padding: 1.3rem 0 0 0; float: left">Forgot Passsword</a>
                      <p class="login button">
                         <button type="submit">LOGIN</button>
                     </p>
-                        
+
                     </form>  </div>
 
 </div>
@@ -144,7 +144,7 @@
                             <label for="passwordsignup_confirm" class="youpasswd"> Confirm Password </label>
                             <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"/>
                         </p>
-                        
+
                          <button type="submit">SIGN UP</button>
 
 

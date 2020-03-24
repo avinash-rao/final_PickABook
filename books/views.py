@@ -38,8 +38,8 @@ def book_detail(request, book_id):
     #first checking if there is book of the mentioned id
     book = Book.objects.filter(pk=book_id).exists()
     if (book == False):
-        return HttpResponse("<h1> No book with that id </h1>")
-    
+        return HttpResponse("<h1> No book with id "+ book_id +" </h1>")
+
     book = Book.objects.get(pk=book_id)
     context = {'book':book, }
     return render(request, 'books/book_detail.html', context)
