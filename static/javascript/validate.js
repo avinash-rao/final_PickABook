@@ -81,6 +81,7 @@ function myFunction() {
 }
 
 // Close the dropdown if the user clicks outside of it
+/*
 window.onclick = function(event) {
   if (!event.target.matches('.d-btn')) {
     var dropdowns = document.getElementsByClassName("drops");
@@ -93,3 +94,4 @@ window.onclick = function(event) {
     }
   }
 }
+*/
