@@ -12,7 +12,7 @@ body {
 	-moz-user-select: none;      /* Firefox */
 	-ms-user-select: none;       /* IE 10+ and Edge */
 	user-select: none;
-
+transition: animatezoom 0.5s;
 }
 
 /* Search bar start */
@@ -270,7 +270,7 @@ outline: none;
 background: #edf4f6;
 padding-bottom: 33px;
 box-shadow: 0 5px #666;
-
+transition: 0.6s ease;
 }
 
 .categories1:hover
@@ -280,7 +280,7 @@ background-color: #d82a4e;
 -ms-transform: scale(0.1); /* IE 9 */
   -webkit-transform: scale(0.1); /* Safari 3-8 */
   transform: scale(1.1);
-	transition: 2s ease;
+	transition: 1s ease;
 }
 
 .ci-text{
@@ -491,13 +491,22 @@ input[type=text], input[type=password]
 {
  width: 100%;
   border: 0;
-  border-bottom: 2px solid pink;
+  border-bottom: 1px solid pink;
   outline: 0;
   font-size: 1.3rem;
   color: white;
   padding: 7px 0;
   background: transparent;
+-webkit-transition: border-bottom 0.4s;
+  
   }
+
+input[type=text]:hover, input[type=password]:hover{
+    border-bottom: 3px solid pink;
+    -webkit-transition: border-bottom 0.4s;
+}
+
+
 .h1{
  background: -webkit-linear-gradient(#eee, #333);
   -webkit-background-clip: text;    
@@ -597,24 +606,20 @@ span.psw
   color: #fff;
   margin: 0% auto 15% auto;  /* 5% from the top, 15% from the bottom and centered */
   background: linear-gradient(to bottom right,#F87E7B, #B05574 );
-  padding: 15px 30px;
+  padding: 15px 15px;
   border-radius: 30px;
-  width: 35vw;
-    height: 60vh;
+  width: 30vw;
+  height:auto;
+    padding-bottom: 70px;
   }
-
-.modal-footer{
-   
-    
-}
 
 /* The Close Button (x) */
 .close
 {
-  position: absolute;
-  right: 0px;
-  top: 0;
+  position: relative;
+  float: right;
   color: #FAB87F;
+    font-size: 1.5em;
   font-weight: bold;
 }
 

@@ -55,7 +55,7 @@
               {%endif%}
         </ul>
      </nav>
-     <div class="nav-search">
+     <!--<div class="nav-search">
        <input type="search" placeholder="Search...">
        <div class="search"></div>
      </div>
@@ -87,7 +87,7 @@
    <!--login start-->
                     <form  action="login"  method="post" autocomplete="on"  name="loginform">
                         {% csrf_token %}
-                        <span class="close" title="Close">&times;</span>
+                        <span class="close" onclick="document.getElementById('myModal').style.display='none'" title="Close">&times;</span>
                         <h1 class="h1">LOG IN</h1>
                         <p>
                             <label for="mail" class="uname"> Email </label>
@@ -111,12 +111,6 @@
                         <button type="submit">LOGIN</button>
                     </p>
                         
-<!--<div id="sub" class="modal-footer">-->
-                        
-                         <a id="sub">REGISTER NOW</a>
-                        
-
-               <!--login end-->
                     </form>  </div>
 
 </div>
@@ -124,11 +118,11 @@
 <div id="myModal1" class="modal">
 
   <!-- Modal content -->
-  <div id="modalc" class="modal-content animate">
+  <div id="modal" class="modal-content animate">
    <!--login start-->
                      <form  action="/Landingapp/register"  method="post" autocomplete="on">
                         {% csrf_token %}
-                        <span class="close1" title="Close">&times;</span>
+                        <span class="close" onclick="document.getElementById('myModal1').style.display='none'" title="Close">&times;</span>
                         <h1> SIGN UP </h1>
                         <p>
                             <label for="name" class="name"> Name</label>
@@ -151,7 +145,7 @@
                             <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"/>
                         </p>
                         
- <input type="submit" value="SIGN UP"/>
+                         <button type="submit">SIGN UP</button>
 
 
                     </form>
@@ -177,7 +171,7 @@
 <div class="signup">
   <form action="/Landingapp/signup" method="post">
     {% csrf_token %}
-  <input type="button" name="sbt" value="Sign Up Now  " class="site-btn" onclick="document.getElementById('id01').style.display='block'">
+  <input type="button" name="sbt" value="Sign Up Now  " class="site-btn" onclick="document.getElementById('myModal1').style.display='block'">
 </form>
 </div>
 </header>
@@ -355,36 +349,19 @@
 <!-- end footer-->
 <script>
 // Get the modal
-var modal = document.getElementById("myModal");
+var modal = document.getElementById('myModal');
 var modal1 = document.getElementById("myModal1");
 
 // Get the button that opens the modal
 var btn = document.getElementById("myBtn");
 var rnd = document.getElementById("random");
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-    var sbmt =document.getElementById("sub");
-var span1 = document.getElementsByClassName("close1")[0];
-var modalc = document.getElementById("modalc");
 // When the user clicks the button, open the modal
 btn.onclick = function() {
   modal.style.display = "block";
 }
-sbmt.onclick = function(){
-    modal.style.display = "none";
+sbmt.onclick = function() {
     modal1.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-span1.onclick = function() {
-  modal1.style.display = "none";
-}
-
-rnd.onclick = function(){
-modal.style.display = "none";
 }
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
