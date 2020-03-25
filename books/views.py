@@ -5,7 +5,7 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 
 from django.contrib.auth.decorators import login_required
-from .models import Book
+from .models import Book, Genre
 from .forms import BookForm
 
 # Create your views here.
@@ -13,15 +13,22 @@ def bookss(request):
     res=render(request,'books/bookss.html')
     return res
 
+def categoryBooks(request, category_name):
+    # return HttpResponse("<h1>All the books of a particular category ("+ category_name +") will be displayed here.</h1>")
+    genre = Genre.objects.filter(pk=category_name).exists()
+    if (genre == False):
+        return HttpResponse("<h1> No Genre with name "+ category_name +" </h1>")
+
+    genre = Genre.objects.get(pk=category_name)
+    genre.book_set.all()
+
 def addBook(request):
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
         form = BookForm(request.POST)
         # check whether it's valid:
         if form.is_valid():
-            # process the data in form.cleaned_data as required
-            # ...
-            # redirect to a new URL:
+            form.save()
             print('Form submitted')
             return HttpResponseRedirect('/books/')
 
