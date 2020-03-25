@@ -1,10 +1,57 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-<h1>welocme About</h1>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>About</title>
+  <link rel="stylesheet" href="{% static 'css/about.css' %}">
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500|Sigmar+One|Zhi+Mang+Xing&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <!--
+  <div class="title"><span style="font-family: 'Sigmar One', cursive;">Petal</span><span style="font-family: 'Zhi Mang Xing', cursive;">Pulse</span></div> -->
+
+  <span id="output"></span>
+
+  <div class="title" style="font-family: 'Zhi Mang Xing', cursive;"><img src="Background.png" width="80px" height="auto" alt="">  PickABook</div>
+  <section> </section>
+
+  <div class="container">
+    <h2>The first breed of true wireless earphones. </h2>
+    <p>It is a website on which you can sell,buy and exchange books.
+      It is based on the idea of users selling,buying or exchanging books with other users.
+
+      A user can get a good price for his/her books by selling them to the people who need them indeed.
+      Students if willing to buy second hand books at a cheaper price than the market's,
+      should place their requests on pickabook.com and buy books from the users who are willing to sell them.
+      <br><br>
+      So,why let your old,used books occupy space in your closet? Why let your already read used
+      books acquire dust and dirt? Register for free and start posting ads of your books on pickabook.com
+    </p>
+  </div>
+
+  <div class="btn-style">
+    <!-- <audio id="myAudio" src="D:\Songs\ENGLISH\Imagine Dragons – Thunder 🎵.mp3" preload="auto">
+    </audio>
+    <a onClick="togglePlay()"><span>Click To Listen</span></a> -->
+    <a href="{% url 'index' %}"><span>Go to Home Page</span></a>
+  </div>
+
+  <div class="footer">
+    <p>Thanks for showing your interest</p>
+  </div>
+
+
+  <script type="text/javascript">
+    // *******************ClipPath Animation*******************
+    var section = document.querySelector('section');
+    window.addEventListener('scroll', function() {
+      var value = window.scrollY;
+      section.style.clipPath = "circle(" + value + "px at center)";
+    });
+  </script>
+</body>
 </html>
