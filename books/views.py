@@ -17,10 +17,13 @@ def categoryBooks(request, category_name):
     # return HttpResponse("<h1>All the books of a particular category ("+ category_name +") will be displayed here.</h1>")
     genre = Genre.objects.filter(pk=category_name).exists()
     if (genre == False):
-        return HttpResponse("<h1> No Genre with name "+ category_name +" </h1>")
+        return HttpResponse("<h1> No category with name "+ category_name +" </h1>")
 
     genre = Genre.objects.get(pk=category_name)
-    genre.book_set.all()
+    books = genre.book_set.all()
+    context = {'genre':genre, 'books':books}
+    print("Displaying category page")
+    return render(request, 'books/categorybooks.html', context)
 
 def addBook(request):
     if request.method == 'POST':
