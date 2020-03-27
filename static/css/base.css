@@ -1,6 +1,6 @@
 html, body {
-    padding-bottom: 40px;
-    padding-top: 60px;
+    /* padding-bottom: 40px; */
+    /* padding-top: 60px; */
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none;   /* Chrome 6.0+, Safari 3.1+, Edge & Opera 15+ */
     -moz-user-select: none;      /* Firefox */
@@ -14,21 +14,24 @@ html, body {
 
 .my-header, .my-footer{
     width: 100%;
-    position: absolute;
+    /* position: absolute;   */
     background: #333;
     padding: 10px 0;
     color: #fff;
 }
 .my-header{
     top: 0;
+    position: relative;
+    margin-bottom: 20px;
 }
 
 /*Style for Footer Section*/
 .my-footer{
-    position:fixed;
+    position: relative;
     bottom: 0;
     height: 120px;
     border-top: 2px solid #d82a4e;
+    margin-top: 20px;
 }
 
 .container-footer{
