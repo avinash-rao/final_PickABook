@@ -3,7 +3,7 @@ from django.conf.urls import url
 
 urlpatterns=[
     #localhost/books/
-    url('^$',views.bookss, name='books'),
+    url('',views.bookss, name='books'),
     url('(?:category-(?P<category_name>\w+))', views.categoryBooks),
     url('add-book', views.addBook),
 

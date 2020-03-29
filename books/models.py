@@ -28,7 +28,7 @@ class Book(models.Model):
     selling_price = models.DecimalField(max_digits=10,decimal_places=2)
     language = models.ForeignKey('Language', on_delete=models.CASCADE, null=True)
     genre = models.ManyToManyField(Genre, help_text='Select a genre for this book')
-    image = models.ImageField(upload_to='book_images', null=True)
+    image = models.ImageField(upload_to='book_images', null=True, blank=True)
 
     def __str__(self):
         """String for representing the Model object."""

@@ -33,8 +33,11 @@ def addBook(request):
         if form.is_valid():
             form.save()
             print('Form submitted')
-            return HttpResponseRedirect('/books/')
 
+            return HttpResponseRedirect('/books/')
+        else:
+            print("Invalid form")
+            print(form.errors)
     # if a GET (or any other method) we'll create a blank form
     else:
         form = BookForm()
