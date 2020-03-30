@@ -15,6 +15,11 @@ body {
 transition: animatezoom 0.5s;
 }
 
+* {
+	padding:0;
+	margin:0;
+}
+
 /* Search bar start */
 @import url("https://fonts.googleapis.com/css?family=Inconsolata:700");
 .nav-search {
@@ -132,7 +137,6 @@ transition: animatezoom 0.5s;
 }
 /* Search bar end */
 
-
 .error{
 
   color: red;
@@ -145,10 +149,10 @@ transition: animatezoom 0.5s;
 .header{
 
   background-repeat: no-repeat;
-	background-size:contain, cover;
+	background-size: cover;
 	background-position: top center;
   height: 540px;
-  position:absolute;
+  position:relative;
   width: 100%;
   height: 100%;
   top: 0;
@@ -185,16 +189,14 @@ margin-top: 50px;
    border-radius: 10px;
    position: relative;
    left: 80px;
--webkit-transition: opacity 0.8s;
-   }
+	 -webkit-transition: opacity 0.8s;
+}
 
-.site-btn:hover
-{
+.site-btn:hover{
   opacity: 0.8;
   -webkit-transition: opacity 0.8s;
 }
-.site-btn:focus
-{
+.site-btn:focus{
  outline:none;
 }
 .signup{
@@ -204,24 +206,21 @@ margin-top: 50px;
 }
 
 
-.text
-{
-position: relative;
-margin:0;
-top:320px;
-color: #fff;
-text-align: center;
+.text {
+	position: relative;
+	margin:0;
+	top:320px;
+	color: #fff;
+	text-align: center;
 }
 
-h2
-{  margin:0;
+h2{
+	margin:0;
   font-size:70px;
 	font-weight: 600px;
   font-weight: normal;
 	text-align: center;
 }
-
-
 
 img {
 	max-width: 100%;
@@ -230,12 +229,13 @@ img {
 
 .course{
 	position:relative;
-	top:870px;
+	top:0;
 	width: 100%;
+	color:  #464242;
 	text-align: center;
+	margin-bottom: 70px;
 }
 .course h2{
-   color: #464242;
 	 margin: 0;
 	 font-size: 50px;
 	 font-weight:normal;
@@ -244,7 +244,6 @@ img {
 
 .p-line{
 	font-size: 14.6px;
-  color: #fff;;
   line-height: 2.0;
 	word-spacing:1.0px
 	font-weight: 500;
@@ -253,7 +252,7 @@ img {
 
 
 
-.course-categorie
+/* .course-categorie
 {
 	margin-top:750px;
   position: absolute;
@@ -261,8 +260,16 @@ img {
 	cursor: pointer;
 	margin-left: 10px;
 	padding-bottom: 100px;
+} */
 
+.course-categories {
+	text-align: center;
 }
+.course-category {
+	display: inline-block;
+	margin: 25px 40px;
+}
+
 .categories1
 {
 background-size: cover;
@@ -400,16 +407,14 @@ margin-top: 400px;
 
 /* teacher singnup*/
 .full-section{
-position: absolute;
+position: relative;
 background-size: cover;
-margin-left:-8px;
-margin-right:0 auto;
+/* margin-left:-8px; */
+/* margin-right: 0 auto; */
 color: red;
 width:99.8%;
 height: 900px;
-margin-top: 1589px;
-
-
+/* margin-top: 1589px; */
 }
 .signup-div
 {
@@ -425,6 +430,7 @@ background-color:  #d82a4e;;
 
 .img-div{
 	position: absolute;
+	/* display: inline-block; */
 	background-size: 100px 300px;
 	background-image: url('../images/signup-bg.png');
 	background-repeat: no-repeat;
@@ -435,17 +441,14 @@ background-color:  #d82a4e;;
 	width: 633px;
 	color: red;
 	}
-	.img-div img{
-
-max-width: 100%;
-	}
+.img-div img{
+	max-width: 100%;
+}
 .signup-img{
 	max-width: 100%;
 }
 
 .form-div{
-
-
 	position: absolute;
 	height: 500px;
 	margin-top: 70px;
@@ -457,7 +460,6 @@ max-width: 100%;
 .signup-form input[type=text],
 .signup-form input[type=email]
 {
-
 	height: 57px;
 	width: 85%;
 	padding: 0 30px;
@@ -686,10 +688,10 @@ a:hover
 
 
 .my-footer{
-	position: absolute;
-		margin-top: 2479px;
+	position: relative;
+		margin-top: 0px;
 		height: 120px;
-		margin-left: -9px;
+		/* margin-left: -9px; */
 		width: 100%;
 		color:#fff;
 		background: #333;
@@ -842,8 +844,5 @@ position: relative;
   text-decoration: none;
   display: block;
 }
-
-
-
 
 .show {display: block;}

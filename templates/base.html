@@ -36,9 +36,8 @@
 
                  <a href="/">Home</a>
                  <a href="{% url 'about' %}">About Us</a>
-                 <a href="{% url 'books' %}">Courses</a>
-                 <a href="#">News</a>
-                 <a href="{% url 'contact' %}">Contact</a>
+                 <a href="{% url 'books' %}">Books</a>
+                 <a href="#footer" class="drp">Contact</a>
              </nav>
          </div>
 
@@ -53,12 +52,13 @@
             </ul>
        </div>
   </header>
-
+<div class="container">
   {%block body%}
 
   {%endblock %}
+</div>
 
-   <div class="my-footer">
+   <div class="my-footer" id="footer">
     <div class="footer-logo">
     <img src="{%static 'images/logo.png' %}" alt="stie-logo"=>
     	</div>

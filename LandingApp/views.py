@@ -74,10 +74,10 @@ def register(request):
 
 
 #contact page
-@login_required(login_url="/login/")
-def contact(request):
-    res=render(request,'LandingApp/contact.html')
-    return res
+# @login_required(login_url="/login/")
+# def contact(request):
+#     res=render(request,'LandingApp/contact.html')
+#     return res
 
 #about page
 def about(request):

@@ -6,6 +6,16 @@ html, body {
     -moz-user-select: none;      /* Firefox */
     -ms-user-select: none;       /* IE 10+ and Edge */
     user-select: none;
+    height: 100%;
+}
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
 }
 
 .container{
@@ -26,13 +36,20 @@ html, body {
     margin-bottom: 20px;
 }
 
+.container {
+  flex: 1 0 auto;
+}
+
 /*Style for Footer Section*/
 .my-footer{
-    position: relative;
+    /* position: absolute; */
+    flex-shrink: 0;
+    left: 0;
     bottom: 0;
     height: 120px;
     border-top: 2px solid #d82a4e;
     margin-top: 20px;
+    /* overflow: hidden; */
 }
 
 .container-footer{
