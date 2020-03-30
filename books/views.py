@@ -17,6 +17,7 @@ def categoryBooks(request, category_name):
     # return HttpResponse("<h1>All the books of a particular category ("+ category_name +") will be displayed here.</h1>")
     genre = Genre.objects.filter(pk=category_name).exists()
     if (genre == False):
+        print("not found")
         return HttpResponse("<h1> No category with name "+ category_name +" </h1>")
 
     genre = Genre.objects.get(pk=category_name)

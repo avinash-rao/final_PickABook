@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+{% load custom_tags %}
 <html lang="en" dir="ltr">
   <head>
     <!-- meta tag is used for control the size of page -->
@@ -58,7 +59,7 @@
      <!--<div class="nav-search">
        <input type="search" placeholder="Search...">
        <div class="search"></div>
-     </div>
+     </div> -->
                     <!-- shows server error -->
                         {% if messages %}
                           {% for message in messages %}
@@ -189,28 +190,38 @@
 <section>
 
 <!-- course categorie-->
+{% comment %}
 <div class="course-categorie">
 <table>
 <tr>
-{% comment %}
+  {% with i=1 %}
 
   {% for category in categories %}
-  <td>
-    <a href="category/{{ #category_name }}" style="text-decoration: none;">
-      <div class="categories1">
-       <img src="{%static  'images/categories/1.jpg' %}" alt="">
-       <div class="ci-text">
-        <h5>{{ #Category name }}</h5>
-        <span>{{ #No. of books }}</span>
-       </div>
-      </div>
-    </a>
-  </td>
-  {% endfor %}
 
-  End section tag here
-{% endcomment %}
-  <td>
+    {% ifequal i 4 %}
+      </tr>
+      <tr>
+      {{ i|update_variable:1 }}
+    {% endifequal %}
+
+    <td>
+      <a href="books/category-{{category.name}}" style="text-decoration: none;">
+        <div class="categories1">
+         <img src="{%static  'images/categories/1.jpg' %}" alt="">
+         <div class="ci-text">
+          <h5>{{ category.name }}</h5>
+          <span>No. of books</span>
+         </div>
+        </div>
+      </a>
+    </td>
+    {{ i | add:1 }}
+  {% endfor %}
+  {% endwith %}
+</tr>
+  <!-- End section tag here -->
+
+<td>
   <a href="Course/c" style="text-decoration: none;">
   <div class="categories1">
      <img src="{%static  'images/categories/1.jpg' %}" alt="">
@@ -281,11 +292,28 @@
            </a>
        </td>
   </tr>
+</table>
+</div>
 
-      </table>
-      </div>
+{% endcomment %}
 
+<div class="course-categories">
+  {% for category in categories %}
+    <div class="course-category">
+      <a href="books/category-{{category.name}}" style="text-decoration: none;">
+        <div class="categories1">
+         <img src="{% static  'images/categories/1.jpg' %}" alt="">
+         <div class="ci-text">
 
+            <h5>{{ category.name }}</h5>
+            <span>{{ category.book_count }}</span>
+
+         </div>
+        </div>
+      </a>
+    </div>
+  {% endfor %}
+</div>
 
 </section>
 <!--course categorie end -->

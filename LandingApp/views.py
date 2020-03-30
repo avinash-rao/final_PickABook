@@ -5,11 +5,15 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.core.mail import send_mail
+from books.models import Book,Genre,Language
+from django.db.models import Count
 # Create your views here.
 
 #HomePage
 def firstpage(request):
-    res = render(request,'LandingApp/firstpage.html')
+    categories = Genre.objects.annotate(book_count=Count('book'))
+    context = {'categories': categories}
+    res = render(request,'LandingApp/firstpage.html', context)
     return res
 
 #login user
