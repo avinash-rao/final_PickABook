@@ -22,7 +22,13 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
   <!-- Stylesheets -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/animate-custom.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/landingpage.css' %}">
   <link rel="stylesheet" href="{% static 'css/base.css' %}"/>
+
+  <!-- Javascripts -->
+  <script type="text/javascript" charset="utf-8" src="{%static  '/javascript/validate.js' %} "></script>
+
 </head>
 <body>
   <header>
@@ -38,8 +44,23 @@
                  <a href="{% url 'about' %}">About Us</a>
                  <a href="{% url 'books' %}">Books</a>
                  <a href="#footer" class="drp">Contact</a>
+                 {% if user.is_authenticated %}
+                 <div class="dr">
+                   <a  onclick="myFunction()" class="d-btn">{{ user.username }} <span>▼</span> </a>
+                   <div id="my" class="drops">
+                     <a id="drp" href="profile">My Profile</a></li>
+                     <a id="drp" href="Course?userid={{user.id}}">My Courses</a></li><br>
+                     <a id="drp" href="profile/logout" style="border-top: 1px solid black">Sign-Out</a>
+                   </div>
+                 </div>
+                 {% else %}
+                 <a>
+                   <input type="button" value="Login" id="myBtn" class="site-btn" />
+                 </a>
+                 {% endif %}
              </nav>
          </div>
+         {% comment %}
 
          <div class="dropdown">
             <a class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">{{user.email}}
@@ -51,7 +72,77 @@
                <li><a href="profile/logout" style="border-top: 1px solid black">Sign-Out</a></li>
             </ul>
        </div>
-  </header>
+      {% endcomment %}
+
+
+<!-- Login and Register popup code -->
+<!-- The Modal -->
+<div id="myModal" class="modal">
+ <!-- Modal content -->
+ <div class="modal-content animate">
+  <!--login start-->
+     <form  action="login"  method="post" autocomplete="off"  name="loginform">
+         {% csrf_token %}
+         <span class="close" onclick="document.getElementById('myModal').style.display='none'" title="Close">&times;</span>
+         <h1 class="h1">LOG IN</h1>
+         <p>
+             <label for="mail" class="uname"> Email </label>
+             <input id="mail" name="mail" required="required" type="text" placeholder=""  title="Enter email"/>
+         </p>
+         <p>
+             <label for="password" class="youpasswd"> Password </label>
+             <input id="password" name="password"  required="required" type="password" placeholder="" onblur="checkPass();" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" />
+         </p>
+         <p class="keeplogin">
+           <input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" />
+           <label for="loginkeeping">Keep me logged in</label>
+         </p>
+         <a href="/Reset-password" style="color: #fff; padding: 1.3rem 0 0 0; float: left">Forgot Passsword</a>
+      <p class="login button">
+         <button type="submit">LOGIN</button>
+     </p>
+
+     </form>
+  </div>
+</div>
+<!--Login form code-->
+<div id="myModal1" class="modal">
+
+ <!-- Modal content -->
+ <div id="modal" class="modal-content animate">
+  <!--login start-->
+    <form  action="/Landingapp/register"  method="post" autocomplete="on">
+       {% csrf_token %}
+       <span class="close" onclick="document.getElementById('myModal1').style.display='none'" title="Close">&times;</span>
+       <h1> SIGN UP </h1>
+       <p>
+           <label for="name" class="name"> Name</label>
+           <input id="name" name="namesignup" required="required" type="text" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" title="User must contain some meaningfull name"/>
+       </p>
+       <!-- <p>
+           <label for="usernamesignup" class="uname"> Username</label>
+           <input id="usernamesignup" name="usernamesignup" required="required" type="text" maxlength="6" pattern="[A-Z]{4}[0-9]{2}" title="Username must contain atleast 4 Capital letter from A-Z and 2 number from 0-9 & starts with Capital letter"/>
+       </p> -->
+       <p>
+           <label for="emailsignup" class="youmail" > E-mail Id</label>
+           <input id="emailsignup" name="emailsignup" required="required" type="text" placeholder=""  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="youremail@email.com"/>
+       </p>
+       <p>
+           <label for="passwordsignup" class="youpasswd" > Password </label>
+           <input id="passwordsignup" name="passwordsignup" required="required" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"/>
+       </p>
+       <p>
+           <label for="passwordsignup_confirm" class="youpasswd"> Confirm Password </label>
+           <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"/>
+       </p>
+
+        <button type="submit">SIGN UP</button>
+   </form>
+                <!--signup end-->
+ </div>
+</div>
+</header>
+
 <div class="container">
   {%block body%}
 
@@ -79,5 +170,29 @@
     	</div>
       </div>
     	<!-- end footer-->
+
+    <script>
+    // Get the modal
+    var modal = document.getElementById('myModal');
+    var modal1 = document.getElementById("myModal1");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+    var rnd = document.getElementById("random");
+    // Get the <span> element that closes the modal
+    // When the user clicks the button, open the modal
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+    sbmt.onclick = function() {
+        modal1.style.display = "block";
+    }
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    </script>
 </body>
 </html>

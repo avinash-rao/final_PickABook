@@ -36,6 +36,7 @@ body {
     margin-bottom: 20px;
 }
 
+
 .container {
   flex: 1 0 auto;
 }
@@ -171,6 +172,12 @@ a:focus {
     	margin-left: 988px;
 }
 
+.drops a {
+  color: black;
+  padding: 9px 14px;
+  text-decoration: none;
+  display: block;
+}
 
 .dropdown-toggle{
 	border: none;
