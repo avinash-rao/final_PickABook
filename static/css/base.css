@@ -227,8 +227,8 @@ a:hover
   bottom: 155px;
 }
 
-input[type=text], input[type=password]
-{
+/* input[type=text], input[type=password] */
+form[name="loginform"] input[type=text],input[type=password] {
  width: 100%;
   border: 0;
   border-bottom: 1px solid pink;
@@ -241,7 +241,8 @@ input[type=text], input[type=password]
 
   }
 
-input[type=text]:hover, input[type=password]:hover{
+/* input[type=text]:hover, input[type=password]:hover{ */
+form[name="loginform"] input:hover {
     border-bottom: 3px solid pink;
     -webkit-transition: border-bottom 0.4s;
 }
