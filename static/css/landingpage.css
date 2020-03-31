@@ -243,13 +243,13 @@ img {
 }
 
 .p-line{
-	font-size: 14.6px;
+	/* font-family: 'Roboto Mono', monospace; */
+	font-size: 15px;
   line-height: 2.0;
 	word-spacing:1.0px
 	font-weight: 500;
+	padding-top: 20px;
 }
-
-
 
 
 /* .course-categorie

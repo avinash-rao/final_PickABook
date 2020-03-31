@@ -18,6 +18,32 @@ body {
   flex-direction: column;
 }
 
+/* Set a style for all buttons */
+button
+{
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(to bottom right, #B05574, #F87E7B);
+  padding: 15px 30px;
+  border: 2px solid #FAB87F;
+  border-radius: 30px;
+  position: relative;
+  cursor: pointer;
+  top: 50%;
+  float: right;
+}
+
+button:hover
+{
+  background: #FAB87F;
+  color: #fff;
+}
+
+button:focus
+{
+ outline:none;
+}
+
 .container{
     width: 80%;
     margin: 0 auto; /* Center the div tag horizontally */
@@ -35,6 +61,191 @@ body {
     position: relative;
     margin-bottom: 20px;
 }
+
+.d-btn{
+	background: transparent;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+		cursor: pointer;
+}
+
+.d-btn:hover,:focus {
+    text-decoration: none;
+}
+
+.dr {
+  position: relative;
+  display: inline-block;
+	margin-left: 90px;
+}
+
+
+/* Login button start */
+.site-btn{
+  display: inline-block;
+	min-width: 196px;
+	text-align: center;
+	border: none;
+	padding: 15px 10px;
+	font-weight: 600;
+	font-size: 16px;
+	position: relative;
+	color: #fff;
+	cursor: pointer;
+	background: #d82a4e;
+   border-radius: 10px;
+   position: relative;
+   left: 80px;
+	 -webkit-transition: opacity 0.8s;
+}
+
+.site-btn:hover{
+  opacity: 0.8;
+  -webkit-transition: opacity 0.8s;
+}
+.site-btn:focus{
+ outline:none;
+}
+/* Login button end */
+
+/* Login and Register form start */
+/* The Modal (background) */
+.modal
+{
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+.modal1
+{
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+/* Modal Content/Box */
+.modal-content
+{
+  font-weight: bold;
+  color: #fff;
+  margin: 0% auto 15% auto;  /* 5% from the top, 15% from the bottom and centered */
+  background: linear-gradient(to bottom right,#F87E7B, #B05574 );
+  padding: 15px 15px;
+  border-radius: 30px;
+  width: 30vw;
+  height:auto;
+    padding-bottom: 70px;
+  }
+
+/* The Close Button (x) */
+.close
+{
+  position: relative;
+  float: right;
+  color: #FAB87F;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus
+{
+  color: red;
+  cursor: pointer;
+}
+.sub
+{
+    padding: 8px;
+    background-color: aqua;
+    border-radius: 20px;
+}
+
+/* Add Zoom Animation */
+.animate
+{
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+a:link
+{
+  text-decoration: none;
+  color: white;
+}
+
+a:hover
+{
+  text-decoration: underline;
+  color: #d82a4e;
+}
+
+@-webkit-keyframes animatezoom
+{
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom
+{
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px)
+{
+  span.psw
+  {
+     display: block;
+     float: none;
+  }
+  .cancelbtn
+  {
+     width: 100%;
+  }
+}
+.signup{
+  position: absolute;
+  left:555px;
+  bottom: 155px;
+}
+
+input[type=text], input[type=password]
+{
+ width: 100%;
+  border: 0;
+  border-bottom: 1px solid pink;
+  outline: 0;
+  font-size: 1.3rem;
+  color: white;
+  padding: 7px 0;
+  background: transparent;
+-webkit-transition: border-bottom 0.4s;
+
+  }
+
+input[type=text]:hover, input[type=password]:hover{
+    border-bottom: 3px solid pink;
+    -webkit-transition: border-bottom 0.4s;
+}
+/* Login and Register form end */
 
 
 .container {
