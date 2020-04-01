@@ -3,6 +3,7 @@ from django.http import HttpResponse,HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
+from django.urls import reverse
 
 from django.contrib.auth.decorators import login_required
 from .models import Book, Genre
@@ -29,13 +30,13 @@ def categoryBooks(request, category_name):
 def addBook(request):
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
-        form = BookForm(request.POST)
+        form = BookForm(request.POST, request.FILES)
         # check whether it's valid:
         if form.is_valid():
             form.save()
-            print('Form submitted')
+            print('New book Form submitted')
 
-            return HttpResponseRedirect('/books/')
+            return HttpResponseRedirect(reverse('books'))
         else:
             print("Invalid form")
             print(form.errors)
