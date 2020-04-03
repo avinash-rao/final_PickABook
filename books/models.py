@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Genre(models.Model):
@@ -29,6 +30,7 @@ class Book(models.Model):
     language = models.ForeignKey('Language', on_delete=models.CASCADE, null=True)
     genre = models.ManyToManyField(Genre, help_text='Select a genre for this book')
     image = models.ImageField(upload_to='book_images', null=True)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
 
     def __str__(self):
         """String for representing the Model object."""

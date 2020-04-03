@@ -7,5 +7,5 @@ from django.utils.translation import gettext_lazy as _
 class BookForm(ModelForm):
     class Meta:
         model = Book
-        fields = '__all__'
-        
+        # fields = '__all__'
+        exclude = ['user_id']

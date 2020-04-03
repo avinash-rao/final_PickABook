@@ -27,13 +27,18 @@ def categoryBooks(request, category_name):
     print("Displaying category page")
     return render(request, 'books/categorybooks.html', context)
 
+@login_required(login_url="/login/")
 def addBook(request):
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
         form = BookForm(request.POST, request.FILES)
         # check whether it's valid:
         if form.is_valid():
-            form.save()
+            # to add value to user field
+            book = form.save(commit=False)
+            book.user_id = request.user
+            book.save()
+            # form.save()
             print('New book Form submitted')
 
             return HttpResponseRedirect(reverse('books'))
