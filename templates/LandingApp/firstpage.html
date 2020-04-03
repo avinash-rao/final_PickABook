@@ -15,8 +15,11 @@
     <link rel="stylesheet" href="{%static 'css/login.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/animate-custom.css' %}" />
     <link href="{%static 'css/landingpage.css' %}" rel="stylesheet" type="text/css" media="only screen and (min-device-width: 481px">
+    <link rel="stylesheet" href="{% static 'css/flickity-docs.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'css/review-section.css' %}">
     <script  type="text/javascript" charset="utf-8" src="{%static '/javascript/myscripts.js'%}"></script>
     <script type="text/javascript" charset="utf-8" src="{%static  '/javascript/validate.js' %} "></script>
+
    <!-- end link-->
    <title>PickABook | Welcome to PickABook</title>
 
@@ -312,10 +315,9 @@
 
 <!--course categorie end -->
 
-
 <!-- Teacher signup section -->
+{% comment %}
 <div class="full-section">
-
 <div class="signup-div">
   <h2>Sign up to become a Seller</h2>
   <p>Become a seller and easily sell books at desired price.<br> Get the worth of your books.</p>
@@ -327,19 +329,22 @@
       <input type="text" placeholder="Your Phone" name="tphone" required pattern="[6-9]{1}[0-9]{9}" title="Foreg. 9513871504" maxlength="10">
       <input type="submit" value="submit" class="site-btn">
     </form>
-
   </div>
 </div>
 <div class="img-div"> </div>
 </div>
+{% endcomment %}
 
 <!-- end-->
 <!-- fotter section-->
 
 
+<!-- review section start -->
+{% include "../review-section.html" %}
+<!-- review section end -->
 <div class="my-footer" id="footer">
 
-     <div class="footer-logo">
+    <div class="footer-logo">
        <img src="{%static 'images/logo.png' %}" alt="stie-logo" width="40px">
     </div>
 
@@ -384,7 +389,10 @@ window.onclick = function(event) {
 }
 </script>
 
-  </body>
+<!-- flickity script -->
+<script src="{% static 'javascript/flickity-docs.min.js' %}"></script>
+
+</body>
 <!-- end body -->
 </html>
 <!-- end html-->
