@@ -1,16 +1,19 @@
-
+{% load static %}
 <div class="review">
   <p class="review-heading"> Reviews</p>
   <div class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
     <div class="gallery-cell">
-        {% comment %}
-        <div class="review-cell">
-          <img src="{% static 'images/profpic1' %}" alt="">
-          <p>Name</p>
+      <div class="block-text rel zmin">
+        <a title="" href="#">Hercules</a>
+        <p>Never before has there been a good film portrayal of ancient Greece's favourite myth. So why would Hollywood start now?
+          This latest attempt at bringing the son of Zeus to the big screen is brought to us by X-Men: The last Stand director Brett Ratner.
+          If the name of the director wasn't enough to dissuade ...</p>
+      </div>
+      <div class="person-text">
+        <img src="{% static 'images/profile/profile.png' %}" alt="">
+        <a href="#"></a>
 
-        </div>
-
-        {% endcomment %}
+      </div>
     </div>
     <div class="gallery-cell"></div>
     <div class="gallery-cell"></div>

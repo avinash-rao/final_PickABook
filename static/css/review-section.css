@@ -36,7 +36,7 @@
 .gallery-cell:before {
   display: block;
   text-align: center;
-  content: counter(gallery-cell);
+  /* content: counter(gallery-cell); */
   line-height: 300px;
   font-size: 80px;
   color: white;
