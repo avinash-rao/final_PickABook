@@ -3,22 +3,12 @@
 {% block head %}
 <title>Books page</title>
 <link rel="stylesheet" href="{% static 'css/bookss.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/sticky-nav.min.css' %}">
 {% endblock %}
 
 {% block body %}
-  <div class="sticky-nav">
-    <div class="search">
-      <form class="" action="{% url 'book_search' %}" method="GET">
-        <input class="search__input" type="text" placeholder="Search" name="q">
-      </form>
-    </div>
-    <div class="filter">
+  {% include "../sticky-nav.html" %}
 
-    </div>
-    <div class="sort">
-
-    </div>
-  </div>
   <div class="books">
     {% for book in books %}
       <div class="book">
