@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from django.urls import reverse
+from django.db.models import Q
 
 from django.contrib.auth.decorators import login_required
 from .models import Book, Genre
@@ -11,8 +12,9 @@ from .forms import BookForm
 
 # Create your views here.
 def bookss(request):
-    res=render(request,'books/bookss.html')
-    return res
+    books = Book.objects.all()
+    context = {'books': books}
+    return render(request,'books/bookss.html', context)
 
 def categoryBooks(request, category_name):
     # return HttpResponse("<h1>All the books of a particular category ("+ category_name +") will be displayed here.</h1>")
@@ -63,3 +65,26 @@ def book_detail(request, book_id):
     book = Book.objects.get(pk=book_id)
     context = {'book':book, }
     return render(request, 'books/book_detail.html', context)
+
+def book_search(request):
+     if request.method == 'GET':
+        query= request.GET.get('q')
+
+        # submitbutton= request.GET.get('submit')
+
+        if query is not None:
+            # title_lookups= Q(title__icontains=query) | Q(content__icontains=query)
+            title_lookups= Q(title__icontains=query)
+            author_lookups = Q(author__icontains=query)
+
+            # results = Post.objects.filter(lookups).distinct()
+            title_results = Book.objects.filter(title_lookups).distinct()
+            author_results = Book.objects.filter(author_lookups).distinct()
+
+            # context={'results': results, 'submitbutton': submitbutton}
+            context = {'title_results': title_results, 'author_results': author_results}
+            return render(request, 'books/search.html', context)
+        else:
+            return render(request, 'books/search.html')
+     else:
+        return render(request, 'books/search.html')

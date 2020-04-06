@@ -1,9 +1,39 @@
 {% extends "../base.html" %}
-
+{% load static %}
 {% block head %}
-
+<title>Books page</title>
+<link rel="stylesheet" href="{% static 'css/bookss.min.css' %}">
 {% endblock %}
 
 {% block body %}
+  <div class="sticky-nav">
+    <div class="search">
+      <form class="" action="{% url 'book_search' %}" method="GET">
+        <input class="search__input" type="text" placeholder="Search" name="q">
+      </form>
+    </div>
+    <div class="filter">
+
+    </div>
+    <div class="sort">
+
+    </div>
+  </div>
+  <div class="books">
+    {% for book in books %}
+      <div class="book">
+        {% if book.image %}
+          <img src="{{book.image.url}}" alt="" width="50px">
+        {% else %}
+          <img src="{% static 'images/logo1.png' %}" alt="" width="50px">
+        {% endif %}
+        <p class="title">{{book.title}}</p>
+        <p class="author">{{book.author}}</p>
+        <p class="publisher">{{book.publisher}}</p>
+        <p class="actual-price">{{book.actual_price}}</p>
+        <p class="selling-price">{{book.selling_price}}</p>
+      </div>
+    {% endfor %}
+  </div>
 
 {% endblock %}

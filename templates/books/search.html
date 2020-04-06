@@ -1,0 +1,22 @@
+{% extends "../base.html" %}
+
+{% block body %}
+<h1>Search results based on title</h1>
+{% if title_results %}
+  {% for title in title_results %}
+  <h2>{{ title }}</h2>
+  {% endfor %}
+{% else %}
+  <h2>Nothing to display</h2>
+{% endif %}
+<br><br>
+<h1>Search results based on author</h1>
+{% if author_results %}
+  {% for author in author_results %}
+    <h2>{{ author }}</h2>
+  {% endfor %}
+{% else %}
+  <h1>Nothing to display</h1>
+{% endif %}
+
+{% endblock %}
