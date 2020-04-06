@@ -2,13 +2,39 @@
 @use postcss-nested;
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700,900');
 
+.sticky-nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: yellow;
+  padding: 10px;
+  padding-left: 7%;
+  padding-right: 7%;
+  font-size: 15px;
+}
+
+.filter, .sort {
+  display: inline-block;
+  float: right;
+  padding: 12px 24px;
+  // color: color(#575756 a(0.8));
+  color: #575756;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+
+}
+
+.filter span, .sort span {
+  text-transform: lowercase;
+  font-weight: bold;
+}
 
 // Search bar style
 .search {
 
     width: 430px;
     padding-top: 0px;
-
+    display: inline-block;
     &__input {
         width: 100%;
         padding: 12px 24px;

@@ -1,13 +1,17 @@
 {% extends "../base.html" %}
 {% load static %}
+
 {% block head %}
 <title>Books page</title>
 <link rel="stylesheet" href="{% static 'css/bookss.min.css' %}">
 <link rel="stylesheet" href="{% static 'css/sticky-nav.min.css' %}">
 {% endblock %}
 
-{% block body %}
+{% block body_header %}
   {% include "../sticky-nav.html" %}
+{% endblock %}
+
+{% block body %}
 
   <div class="books">
     {% for book in books %}
