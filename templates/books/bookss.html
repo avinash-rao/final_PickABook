@@ -24,7 +24,7 @@
         {% endif %}
 
         <div class="book-text">
-          <p class="title">{{book.title}}</p>
+          <a class="title" href="{% url 'book_detail' book_id=book.id %}">{{book.title}}</a>
           <p class="author">by {{book.author}}</p>
           <p class="publisher">{{book.publisher}}</p>
           <p class="selling-price">₹{{book.selling_price}}</p>
