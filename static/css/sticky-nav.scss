@@ -11,6 +11,7 @@
   padding-left: 7%;
   padding-right: 7%;
   font-size: 15px;
+  z-index: 1;
 }
 
 .filter, .sort {
@@ -72,6 +73,7 @@
             border-bottom: 1px solid #575756;
             border-radius: 0;
             background-position: 100% center;
+            background-color: transparent;
         }
     }
 }

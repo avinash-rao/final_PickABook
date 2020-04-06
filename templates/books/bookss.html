@@ -16,17 +16,22 @@
   <div class="books">
     {% for book in books %}
       <div class="book">
+
         {% if book.image %}
           <img src="{{book.image.url}}" alt="" width="50px">
         {% else %}
           <img src="{% static 'images/logo1.png' %}" alt="" width="50px">
         {% endif %}
-        <p class="title">{{book.title}}</p>
-        <p class="author">{{book.author}}</p>
-        <p class="publisher">{{book.publisher}}</p>
-        <p class="actual-price">{{book.actual_price}}</p>
-        <p class="selling-price">{{book.selling_price}}</p>
+
+        <div class="book-text">
+          <p class="title">{{book.title}}</p>
+          <p class="author">by {{book.author}}</p>
+          <p class="publisher">{{book.publisher}}</p>
+          <p class="selling-price">₹{{book.selling_price}}</p>
+          <p class="actual-price">₹{{book.actual_price}}</p>
+        </div>
       </div>
+      <hr>
     {% endfor %}
   </div>
 
