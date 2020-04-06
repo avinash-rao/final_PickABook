@@ -1,22 +1,67 @@
 {% extends "../base.html" %}
+{% load static %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/bookss.min.css' %}">
+{% endblock %}
 
 {% block body %}
-<h1>Search results based on title</h1>
-{% if title_results %}
-  {% for title in title_results %}
-  <h2>{{ title }}</h2>
-  {% endfor %}
-{% else %}
-  <h2>Nothing to display</h2>
+{% if not title_results and not author_results %}
+  <h1>Search results does not match anything..</h1>
 {% endif %}
-<br><br>
-<h1>Search results based on author</h1>
+
+{% if title_results %}
+  <h1 style="color:#d82a4e;">Search results based on title</h1>
+
+    <div class="books">
+      {% for book in title_results %}
+        <div class="book">
+
+          {% if book.image %}
+            <img src="{{book.image.url}}" alt="" width="50px">
+          {% else %}
+            <img src="{% static 'images/logo1.png' %}" alt="" width="50px">
+          {% endif %}
+
+          <div class="book-text">
+            <a class="title" href="{% url 'book_detail' book_id=book.id %}">{{book.title}}</a>
+            <p class="author">by {{book.author}}</p>
+            <p class="publisher">{{book.publisher}}</p>
+            <p class="selling-price">₹{{book.selling_price}}</p>
+            <p class="actual-price">₹{{book.actual_price}}</p>
+          </div>
+        </div>
+        <hr>
+      {% endfor %}
+    </div>
+{% endif %}
+<br>
+
 {% if author_results %}
-  {% for author in author_results %}
-    <h2>{{ author }}</h2>
-  {% endfor %}
-{% else %}
-  <h1>Nothing to display</h1>
+  <h1 style="color:#d82a4e;">Search results based on author</h1>
+
+  <div class="books">
+    {% for book in author_results %}
+      <div class="book">
+
+        {% if book.image %}
+          <img src="{{book.image.url}}" alt="" width="50px">
+        {% else %}
+          <img src="{% static 'images/logo1.png' %}" alt="" width="50px">
+        {% endif %}
+
+        <div class="book-text">
+          <a class="title" href="{% url 'book_detail' book_id=book.id %}">{{book.title}}</a>
+          <p class="author">by {{book.author}}</p>
+          <p class="publisher">{{book.publisher}}</p>
+          <p class="selling-price">₹{{book.selling_price}}</p>
+          <p class="actual-price">₹{{book.actual_price}}</p>
+        </div>
+      </div>
+      <hr>
+      {% endfor %}
+    </div>
+
 {% endif %}
 
 {% endblock %}
