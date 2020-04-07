@@ -1,10 +1,22 @@
 {% extends "../base.html" %}
+{% load static %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/book_detail.min.css' %}">
+{% endblock %}
 
 {% block body %}
-  <h1>title: </h1>
-  {{ book.title }}
-  <h1>hi</h1>
-  <h1>hi</h1>
-  <h1>hi</h1>
-  <h1>his</h1>
+  <div class="content">
+    {% if book.image %}
+      <img src="{{book.image.url}}" alt="" width="50px">
+    {% else %}
+      <img src="{% static 'images/logo1.png' %}" alt="" width="50px">
+    {% endif %}
+
+    <p class="title">{{book.title}}</p>
+    <p class="author">by {{book.author}}</p>
+    <p class="publisher">{{book.publisher}}</p>
+    <p class="selling-price">₹{{book.selling_price}}</p>
+    <p class="actual-price">₹{{book.actual_price}}</p>
+  </div>
 {% endblock %}
