@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Nova+Cut&family=Acme&family=Bitter:ital@1&family=Gotu&display=swap');
 .review {
   margin: 30px 0px;
 }
@@ -8,27 +8,31 @@
   /* font-style: italic; */
   /* position: absolute; */
   color: #333 ;
-  font-family: cursive;
-  margin-left: 20%;
+  /* font-family: cursive */
+  font-family: 'Gotu', sans-serif;
+  margin-left: 15%;
   margin-top: 20px;
   /* z-index: 1; */
+  font-weight: 600;
+  letter-spacing: 5px;
 }
 
 .gallery {
-  background: #EEE;
+  background: #fff;
 }
 
 .gallery-cell {
   width: 66%;
   height: 300px;
   margin-right: 10px;
-  /* background: #8C8; */
+
+  /* background: #8C8;
   background: linear-gradient(
      to left,
      #EB5757, #000000
-   );
+   ); */
   counter-increment: gallery-cell;
-  filter: blur(3px);
+  /* filter: blur(3px); */
   /* background-image: url('../images/grey-bg.jpg'); */
 }
 
@@ -46,7 +50,7 @@
 
 .gallery-cell.is-selected {
   /* background-color: #ED2; */
-  filter: blur(0px);
+  /* filter: blur(0px); */
 }
 
 /* cell number */
@@ -56,11 +60,11 @@
   /* content: counter(gallery-cell); */
   line-height: 300px;
   font-size: 80px;
-  color: white;
+  color: black;
 }
 
 .review a{
-  color: white;
+  color: black;
 }
 
 .review .person-text {
@@ -85,14 +89,63 @@
   height: 100%;
   vertical-align: middle;
   padding-left: 10px;
+  font-family: 'Acme', sans-serif;
 }
 
 .review .review-text {
   /* border: red dotted 1px; */
   padding: 20px 20px;
-  color: white;
+  color: black;
 }
 
 .review .review-text h4 {
   margin-bottom: 10px;
+  font-family: 'Bitter', serif;
+}
+
+.review .review-text p {
+  font-family: 'Nova Cut', cursive;
+}
+
+/*==================================================
+ * Effect 7
+ * ===============================================*/
+ .box {
+    width:70%;
+    /* height:200px; */
+    background:#FFF;
+    /* margin:0px auto; */
+    padding: 20px 50px;
+}
+.effect7
+{
+    position:relative;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.effect7:before, .effect7:after
+{
+    content:"";
+    position:absolute;
+    z-index:-1;
+    -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    box-shadow:0 0 20px rgba(0,0,0,0.8);
+    top:0;
+    bottom:0;
+    left:10px;
+    right:10px;
+    /* -moz-border-radius:100px / 10px;
+    border-radius:100px / 10px; */
+}
+.effect7:after
+{
+    right:10px;
+    left:auto;
+    -webkit-transform:skew(8deg) rotate(3deg);
+       -moz-transform:skew(8deg) rotate(3deg);
+        -ms-transform:skew(8deg) rotate(3deg);
+         -o-transform:skew(8deg) rotate(3deg);
+            transform:skew(8deg) rotate(3deg);
 }
