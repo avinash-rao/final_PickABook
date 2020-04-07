@@ -8,9 +8,9 @@
 {% block body %}
   <div class="content">
     {% if book.image %}
-      <img src="{{book.image.url}}" alt="" width="50px">
+      <img src="{{book.image.url}}" class="image" alt="" width="50px">
     {% else %}
-      <img src="{% static 'images/logo1.png' %}" alt="" width="50px">
+      <img src="{% static 'images/logo1.png' %}" class="image" alt="" width="50px">
     {% endif %}
 
     <p class="title">{{book.title}}</p>
