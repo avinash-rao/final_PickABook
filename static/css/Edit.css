@@ -1,186 +1,27 @@
-html,
-body {
-        padding-top: 60px;
-        padding-bottom: 40px;
-    }
-    .container{
-        width: 80%;
-        margin: 0 auto; /* Center the div tag horizontally */
-    }
 
+/*Style for Logo Section*/
 
-    .my-header, .my-footer{
-        width: 100%;
-        position: absolute;
-        background: #333;
-        padding: 10px 0;
-        color: #fff;
-    }
-    .my-header{
-        top: 0;
-    }
-
-/*Style for Footer Section*/
-    .my-footer{
-        position: absolute;
-        margin-top: 759px;
-        height: 120px;
-        border-top: 2px solid #d82a4e;
-    }
-
-    .container-footer{
-        position: absolute;
-        width: 25%;
-        margin-left: 100px;
-        margin-top: 60px;
-        padding-top: 20px;
-    }
-
-    .container-footer1{
-        position: absolute;
-        margin-left: 938px;
-        margin-top: 60px;
-        padding-top: 20px;
-    }
-
-    .footer-logo{
-        position: absolute;
-        margin-top: 0px;
-        margin-left: 100px;
-        padding-bottom: 10px;
-    }
-
-     .container1{
-        position: absolute;
-        width: 15%;
-        height: 60px;
-        margin-top: 0px;
-        margin-left: 1068px;
-        text-align: left;
-        padding-bottom: 5px;
-        font-size: 16px;
-    }
-
-    .container1 a:hover{
-       border: none;
-       background: transparent;
-       color: #fff;
-    }
-
-     .container2{
-        position: absolute;
-        width: 21%;
-        height: 60px;
-        margin-top: 25px;
-        margin-left: 550px;
-        text-align: center;
-        padding-bottom: 5px;
-        transition: transform .3s;
-    }
-
-    .container2 :hover {
-       transform: scale(1.3);
-       opacity: 1;
-    }
-
-
-/*End of Footer section*/
-
-    /*Style for Logo Section*/
-
-       .logo{
-    	position: absolute;
-    	margin-top: 50px;
-    	margin-left: 100px;
-    }
-
-    /*End of Style for Logo Section*/
-
-/*Style for Dropdown Section*/
-    .drop{
-    	position: relative;
-    	display: inline-block;
-	    font-size: 16px;
-	    color: #fff;
-	    margin-left: 240px;
-	    font-weight: 600;
-	    padding: 55px 0 15px;
-    }
-
-
-.drop a:hover{
-    border: none;
-    background: transparent;
-    color: #d82a4e;
+   .logo{
+	position: relative;
+	margin-top: 50px;
+	margin-left: 100px;
 }
 
-a,
-a:hover,
-a:focus {
-    text-decoration: none;
-    outline: none;
-    color: #d82a4e;
-}
-
-.drop a {
-	display: inline-block;
-	font-size: 16px;
-	color: #fff;
-	margin-left: 48px;
-	font-weight: 600;
-	padding: 20px 0 5px;
-}
-
-.dropdown{
-	position: absolute;
-    	top: 80px;
-    	margin-left: 988px;
-}
-
-.dropdown-toggle{
-	border: none;
-	background: transparent;
-	font-size: 16px;
-	color: #fff;
-	font-weight: 600;
-}
-
-
-.dropdown-toggle:hover,:focus {
-    border: none;
-    background: transparent;
-    color: #d82a4e;
-}
-
-.dropdown-menu{
-    font-size: 18px;
-    font-weight: 400;
-    font-weight: 600;
-    color: #fff;
-}
-
-.dropdown-menu:hover,:focus {
-    border: none;
-    background: #fff;
-    color: #d82a4e;
-}
-
-/*End of Style for Dropdown Section*/
-
+/*End of Style for Logo Section*/
 
 /*Style for Edit DIV*/
 
 .edit{
-    position: absolute;
-    top:147px;
+    position: relative;
+    /* top:147px; */
     width: 100%;
-    height: 70px;
+    /* height: 70px; */
     background: #fff;
 }
 
 /*Style for Edit label DIV*/
 .edit-label{
-    position: absolute;
+    position: relative;
     width: 25%;
     margin-left: 90px;
     margin-top: 10px;
@@ -203,15 +44,16 @@ a:focus {
 
 /*Style for Profile DIV*/
 .profile{
-    position: absolute;
-    height: 663px;
+    position: relative;
+    display: block;
+    /* height: 663px; */
     width: 100%;
-    margin-top: 65px;
+    margin-top: 55px;
     background: #fff;
 }
 
 .profile-div{
-    position: absolute;
+    position: relative;
     width: 650px;
     height: 595px;
     margin-top: 10px;
@@ -231,11 +73,13 @@ a:focus {
 
 input[type=text], input[type=password]{
   padding: 10px 15px;
-  width: 20vw;
+  width: 20vw !important;
   display: inline-block;
   border: 0;
   outline: none;
   background: transparent;
+  /* border-bottom: 1px solid pink; */
+  color: black !important;
 }
 
 .btn-edit{
@@ -266,3 +110,8 @@ input[type=text], input[type=password]{
 /*End of Style for Profile DIV*/
 
 /*End of Style for Edit DIV*/
+
+.my-footer {
+  position: relative;
+
+}

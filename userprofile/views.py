@@ -16,14 +16,15 @@ def dashboard(request):
 #profile editing page
 @login_required(login_url="/login/")
 def edit(request):
-  if request.method=="POST":
-      username=request.POST['username']
-      print(username,"edit page")
-      u = User.objects.get(username=username)
-      res=render(request,'userprofile/edit.html',{'user':u})
-      return res
+    # username=request.POST['username']
+    # print(username,"edit page")
+    # u = User.objects.get(username=username)
+    user = request.user
+    res=render(request,'userprofile/edit.html',{'user':user})
+    return res
 
-#chnanging user data
+
+#changing user data
 @login_required(login_url="/login/")
 def change(request):
     if request.method=="POST":
