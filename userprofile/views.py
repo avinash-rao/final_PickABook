@@ -12,7 +12,7 @@ def dashboard(request):
     if request.method=="GET":
       res=render(request,'userprofile/dashboard.html')
       return res
-      
+
 #profile editing page
 @login_required(login_url="/login/")
 def edit(request):
@@ -43,7 +43,8 @@ def change(request):
 
 @login_required(login_url="/login/")
 def myprofile(request):
-        u=User.objects.get(id=request.GET['userid'])
+        # u=User.objects.get(id=request.GET['userid'])
+        u = request.user
         return render(request,'userprofile/userprofile.html',{'user':u})
 
 @login_required(login_url="/login/")

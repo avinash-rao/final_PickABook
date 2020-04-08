@@ -1,141 +1,37 @@
+{% extends "../base.html" %}
+{% load static %}
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/userprofile.min.css' %}">
+{% endblock %}
 
-
-<!DOCTYPE html>
-{%load static%}
-<html>
-<head>
-	<title>Profile template</title>
-	<meta charset="UTF-8">
-    <meta name="description" content="WebUni Education Template">
-    <meta name="keywords" content="Eklavya, education, creative, html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Favicon -->
-    <link href="img/favicon.ico" rel="shortcut icon"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-  <!-- Latest compiled JavaScript -->
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="{%static 'css/Edit.css' %}"/>
-</head>
-<body>
-
-   <div class="my-header">
-        <div class="logo">
-           <img src="{%static 'images/logo.png'%}" alt="">
-        </div>
-
-        <div class="container">
-            <nav  class="drop">
-
-                <a href="\">Home</a>
-                <a href="#">About Us</a>
-                <a href="#">Courses</a>
-                <a href="#">News</a>
-                <a href="#">Contact</a>
-            </nav>
-        </div>
-
-        <div class="dropdown">
-             <a class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">{{user.email}}
-             <span class="caret"></span></a>
-             <ul class="dropdown-menu">
-                <li><a href="Dashboard">Dashboard</a></li><p></p>
-                <li><a href="Course?userid={{user.id}}">My Courses</a></li><br>
-                <li><a href="profile/logout" style="border-top: 1px solid black">Sign-Out</a></li>
-             </ul>
-        </div>
-
+{% block body %}
+  <br>
+  <h2>Your Account</h2>
+  <div class="action-list">
+    <div class="action">
+      <a href="#" class="action-head">Your orders</a>
+      <p class="p">Track, return or buy things again</p>
     </div>
-
-    <!--Profile section tags-->
-
-    <div class="edit">
-      <div class="edit-label">
-        <img src="{% static 'images/profile.png'%}" alt="" width="50px" height="50px" style="margin-bottom: 17px">
-        <label id="label2"><h3>Profile</h3></label><br>
-      </div>
-
-
-      <div class="profile">
-        <div class="profile-div">
-          <div class="profile-form">
-						<br>
-						<form class="" action="profile/change" method="post">
-							  {% csrf_token %}
-                <br><br>
-                <p>
-                    <label for="username" style="margin-left: 45px"><b>Username</b></label><br>
-                    <input type="text" name="username" style="margin-left: 45px" value="{{user.username}}" readonly disabled>
-                </p>
-                <br>
-                <p>
-                    <label for="name" style="margin-left: 45px"><b>Name</b></label><br>
-                    <input type="text"  name="firstname" style="margin-left: 45px" value="{{user.first_name}}" readonly disabled>
-                </p>
-                <br>
-                <p>
-                    <label for="email" style="margin-left: 45px"><b>E-mail</b></label><br>
-                    <input type="text" placeholder="E-mail" name="mail" style="margin-left: 45px" value="{{user.email}}" readonly disabled>
-                </p>
-
-
-
-					</form>
-          </div>
-        </div>
-      </div>
+    <div class="action">
+      <a class="action-head" href="{% url 'edit' %}">Login and security</a>
+      <p class="p">Edit login, name, and mobile number</p>
     </div>
-
-    <!--End of Profile section tags-->
-
-
-    <!-- Footer Section tags-->
-
-    <div class="my-footer">
-
-         <div class="footer-logo">
-           <img src="{%static 'images/logo.png' %}" alt="">
-        </div>
-
-        <div class="container1"><a href="#"><b>• Privacy Policy</a> <br><p></p> <a href="#">• Terms & Conditions</b></a>
-        </div>
-
-        <div class="container2">
-           <a href="https://www.facebook.com" style="margin-right: 40px"><img src="{%static 'images/fotter/facebook.png' %}" alt=""></a>
-           <a href="https://www.twitter.com" style="margin-right: 40px"><img src= "{%static 'images/fotter/twitter.png' %}" alt=""></a>
-           <a href="https://www.linkedin.com"><img src="{%static 'images/fotter/linkedin.png' %}" alt=""></a>
-        </div>
-
-        <div class="container-footer"><b>Copyright &copy; 2019 Eklavya. All right reserved</b>
-        </div>
-
-        <div class="container-footer1"><b>Support & Feedback: Eklavya2019@email.com</b>
-        </div>
-
-
+    <div class="action">
+      <a class="action-head" href="{% url 'books' %}">Shop books</a>
+      <p class="p">Search books, use filter and sort and buy books</p>
     </div>
-</body>
+  </div>
+  <br><br>
+  <h2>In search of a book?</h2><br>
+  <div class="search">
+    <form class="" action="{% url 'book_search' %}" method="GET">
+      <input class="search__input" type="text" placeholder="Search" name="q">
+    </form>
+  </div>
+{% endblock %}
 
-</html>
 
 
+{% block script %}
 
-
-<!--DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <p>{{user.username}}</p>
-    <p>{{user.first_name}}</p>
-    <p>{{user.email}}</p>
-    <p>{{user.password}}</p>
-  </body>
-</html>
--->
+{% endblock %}
