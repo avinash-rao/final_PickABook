@@ -60,6 +60,7 @@ button:focus
 .my-header{
     top: 0;
     position: relative;
+    z-index: 2;
     /* margin-bottom: 20px; */
 }
 
