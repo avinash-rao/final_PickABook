@@ -49,7 +49,7 @@
                  <div class="dr">
                    <a  onclick="myFunction()" class="d-btn" data-toggle="dropdown">{{ user.username }} <span>▼</span> </a>
                    <div id="my" class="drops">
-                     <a id="drp" href="profile">My Profile</a></li>
+                     <a id="drp" href="{% url 'myprofile' %}">My Profile</a></li>
                      <a id="drp" href="Course?userid={{user.id}}">My Courses</a></li><br>
                      <a id="drp" href="profile/logout" style="border-top: 1px solid black">Sign-Out</a>
                    </div>

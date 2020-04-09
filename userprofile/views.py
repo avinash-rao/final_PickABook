@@ -28,8 +28,7 @@ def edit(request):
 @login_required(login_url="/login/")
 def change(request):
     if request.method=="POST":
-        print("under aa gye hai")
-        username=request.POST['username']
+        username=request.POST['email']
         firstname=request.POST['firstname']
         mail=request.POST['mail']
         new_password=request.POST['password']
