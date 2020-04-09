@@ -409,6 +409,17 @@ a:focus {
   display: block;
 }
 
+.add-book {
+  padding: 10px 15px 5px !important;
+  background-color: #d82a4e !important;
+  border-radius: 20px;
+}
+
+.add-book:hover {
+  background-color: #fff !important;
+  color: #d82a4e !important;
+}
+
 .dropdown-toggle{
 	border: none;
 	background: transparent;
