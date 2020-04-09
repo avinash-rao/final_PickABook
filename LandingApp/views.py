@@ -6,12 +6,12 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.core.mail import send_mail
 from books.models import Book,Genre,Language
-from django.db.models import Count
+from django.db.models import Count, Q
 # Create your views here.
 
 #HomePage
 def firstpage(request):
-    categories = Genre.objects.annotate(book_count=Count('book')).order_by('-book_count')
+    categories = Genre.objects.annotate(book_count=Count('book', filter=Q(book__sold=False))).order_by('-book_count')
     context = {'categories': categories}
     res = render(request,'LandingApp/firstpage.html', context)
     return res

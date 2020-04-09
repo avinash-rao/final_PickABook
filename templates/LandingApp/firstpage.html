@@ -171,13 +171,14 @@
   <br>Yes, we are literally giving you away a steal.
 </p>
 </div>
-
+{% if not user.is_authenticated %}
 <div class="signup">
   <form action="/Landingapp/signup" method="post">
     {% csrf_token %}
   <input type="button" name="sbt" value="Sign Up Now  " class="site-btn" onclick="document.getElementById('myModal1').style.display='block'">
 </form>
 </div>
+{% endif %}
 </header>
 <div class="course">
   <h2>Our Book Categories</h2>
