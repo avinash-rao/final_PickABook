@@ -11,7 +11,7 @@ from django.db.models import Count
 
 #HomePage
 def firstpage(request):
-    categories = Genre.objects.annotate(book_count=Count('book'))
+    categories = Genre.objects.annotate(book_count=Count('book')).order_by('-book_count')
     context = {'categories': categories}
     res = render(request,'LandingApp/firstpage.html', context)
     return res

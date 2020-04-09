@@ -19,4 +19,5 @@
     <p class="selling-price">₹{{book.selling_price}}</p>
     <p class="actual-price">₹{{book.actual_price}}</p>
   </div>
+  <button onclick="location.href = '{% url 'order-book' book_id=book.id %}';"  type="button" class=".buy" name="button">Buy Now</button>
 {% endblock %}

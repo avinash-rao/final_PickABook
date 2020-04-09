@@ -7,12 +7,12 @@ from django.urls import reverse
 from django.db.models import Q
 
 from django.contrib.auth.decorators import login_required
-from .models import Book, Genre
+from .models import Book, Genre, Order
 from .forms import BookForm
 
 # Create your views here.
 def bookss(request):
-    books = Book.objects.all()
+    books = Book.objects.filter(sold=False).order_by('-date')
     context = {'books': books}
     return render(request,'books/bookss.html', context)
 
@@ -65,6 +65,20 @@ def book_detail(request, book_id):
     book = Book.objects.get(pk=book_id)
     context = {'book':book, }
     return render(request, 'books/book_detail.html', context)
+
+@login_required(login_url="/login/")
+def order(request, book_id):
+    book = Book.objects.filter(pk=book_id).exists()
+    if (book == False):
+        return HttpResponse("<h1> No book with id "+ book_id +" </h1>")
+
+    book = Book.objects.get(pk=book_id)
+    u = request.user
+    total = book.actual_price
+    Order.objects.create(user_id=u, book_id=book, total=total)
+    book.sold = True
+    book.save()
+    return HttpResponse("<h1> Your order has been placed.. You can check it in 'Your Orders' section </h1>")
 
 def book_search(request):
      if request.method == 'GET':

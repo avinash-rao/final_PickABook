@@ -31,7 +31,15 @@ class Book(models.Model):
     genre = models.ManyToManyField(Genre, help_text='Select a genre for this book')
     image = models.ImageField(upload_to='book_images', null=True)
     user_id = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
-
+    sold = models.BooleanField(default=False)
+    date = models.DateField(auto_now_add=True)
+    
     def __str__(self):
         """String for representing the Model object."""
         return self.title
+
+class Order(models.Model):
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    date = models.DateField(auto_now_add=True)
+    book_id = models.ForeignKey(Book, on_delete=models.CASCADE)
+    total = models.DecimalField(max_digits=10,decimal_places=2)
