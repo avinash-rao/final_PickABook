@@ -1,9 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse,HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from . import forms
 
 # Create your views here.
 #deshboard page
@@ -16,30 +17,12 @@ def dashboard(request):
 #profile editing page
 @login_required(login_url="/login/")
 def edit(request):
-    # username=request.POST['username']
-    # print(username,"edit page")
-    # u = User.objects.get(username=username)
     user = request.user
-    res=render(request,'userprofile/edit.html',{'user':user})
-    return res
-
-
-#changing user data
-@login_required(login_url="/login/")
-def change(request):
-    if request.method=="POST":
-        username=request.POST['email']
-        firstname=request.POST['firstname']
-        mail=request.POST['mail']
-        new_password=request.POST['password']
-        if User.objects.filter(username=username).exists():
-           u = User.objects.get(username=username)
-           u.first_name=firstname
-           u.email=mail
-           u.set_password(new_password)
-           u.save()
-           messages.error(request, 'Profile updated Successfully')
-           return HttpResponseRedirect("/",{})
+    form = forms.UpdateProfile(request.POST or None, instance=user)
+    if form.is_valid():
+        form.save()
+        return redirect('myprofile')
+    return render(request, 'userprofile/edit.html', {'form': form})
 
 @login_required(login_url="/login/")
 def myprofile(request):

@@ -71,16 +71,16 @@
     background: #fff;
 }
 
-input[type=text], input[type=password]{
+/* input[type=text], input[type=password]{
   padding: 10px 15px;
   width: 20vw !important;
   display: inline-block;
   border: 0;
   outline: none;
   background: transparent;
-  /* border-bottom: 1px solid pink; */
+  border-bottom: 1px solid pink;
   color: black !important;
-}
+} */
 
 .btn-edit{
   font-weight: bold;
@@ -113,5 +113,22 @@ input[type=text], input[type=password]{
 
 .my-footer {
   position: relative;
+}
 
+/* form design */
+form p {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+form p label {
+  margin-left: 45px;
+  font-size: 17px;
+}
+
+form p input {
+  margin-left: 45px;
+  background:#fff;
+  border-radius: 5px;
+  font-size: 17px;
 }

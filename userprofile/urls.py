@@ -4,7 +4,7 @@ urlpatterns=[
 
 url('^$',views.myprofile, name='myprofile'),
 url('edit',views.edit, name="edit"),
-url('change',views.change),
+# url('change',views.change, name='change'),
 # url('myprofile/',views.myprofile, name='myprofile'),
 url('logout',views.logoutUser),
 ]

@@ -19,30 +19,13 @@
 		<div class="profile-div">
 			<div class="profile-form">
 				<br>
-				<form class="" action="profile/change" method="post">
-						{% csrf_token %}
-						<input type="hidden" name="username" value="{{user}}">
-			<p>
-					<label for="name" style="margin-left: 45px"><b>Name</b></label><br>
-					<input type="text" placeholder="Your Name" name="firstname" style="margin-left: 45px" value="{{user.first_name}}" required pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" title="User must contain some meaningfull name">
-			</p>
-			<p>
-					<label for="uname" style="margin-left: 45px"><b>E-mail</b></label><br>
-					<input type="text" placeholder="E-mail" name="mail" style="margin-left: 45px" value="{{user.email}}" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="youremail@email.com">
-			</p>
-			<p>
-					<label for="psw" style="margin-left: 45px"><b>Password</b></label><br>
-					<input type="password" placeholder="Your Password" name="password" style="margin-left: 45px" value="" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
-			</p>
-
-			<p>
-					<label for="psw" style="margin-left: 45px"><b>Re-enter Password</b></label><br>
-					<input type="password" placeholder="Your Password" name="password" style="margin-left: 45px" value="" required  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
-			</p>
-			<br>
-			 <p >
-				 <input type="submit" value="EDIT PROFILE" class="btn-edit" style="margin-left: 143px"/>
-			</p>
+				<form class="" action="{% url 'edit' %}" method="post" autocomplete="off">
+					{% csrf_token %}
+					{{form.as_p}}
+					<br>
+					 <p >
+						 <input type="submit" value="EDIT PROFILE" class="btn-edit" style="margin-left: 143px"/>
+					</p>
 			</form>
 			</div>
 		</div>
