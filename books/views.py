@@ -4,8 +4,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from django.urls import reverse
-from django.db.models import Q
 from django.contrib import messages
+from django.db.models import Count, Q
 
 from django.contrib.auth.decorators import login_required
 from .models import Book, Genre, Order
@@ -80,10 +80,7 @@ def order(request, book_id):
     book.sold = True
     book.save()
     messages.error(request, 'Your order has been placed')
-    orders = Order.objects.filter(user_id=u.id).select_related('book_id').order_by('date')
-    context = {'orders':orders}
-    return render(request, 'userprofile/myorders.html',context)
-    # return HttpResponse("<h1> Your order has been placed.. You can check it in 'Your Orders' section </h1>")
+    return HttpResponseRedirect(reverse('index'))
 
 def book_search(request):
      if request.method == 'GET':
