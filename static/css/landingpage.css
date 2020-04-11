@@ -528,6 +528,7 @@ button
   cursor: pointer;
   top: 50%;
   float: right;
+	margin-top:5px !important;
 }
 button:hover
 {
