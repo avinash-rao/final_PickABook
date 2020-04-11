@@ -41,7 +41,8 @@ def userLogin(request):
 def register(request):
     data={}
     if request.method=="POST":
-       first_name=request.POST['namesignup']
+       first_name=request.POST['fnamesignup']
+       last_name = request.POST['lnamesignup']
        username=request.POST['emailsignup']
        password=request.POST['passwordsignup']
        passwords_confirm=request.POST['passwordsignup_confirm']
@@ -64,6 +65,7 @@ def register(request):
           password=password,
           email=mail,
           first_name=first_name,
+          last_name=last_name,
           )
           #user.save()
           print("shi hai")

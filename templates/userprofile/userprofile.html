@@ -9,7 +9,7 @@
   <h2>Welcome, {{ user.first_name }}</h2>
   <div class="action-list">
     <div class="action">
-      <a href="#" class="action-head">Your orders</a>
+      <a href="{% url 'myorders' %}" class="action-head">Your orders</a>
       <p class="p">Track, return or buy things again</p>
     </div>
     <div class="action">

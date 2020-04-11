@@ -129,17 +129,21 @@
                         <span class="close" onclick="document.getElementById('myModal1').style.display='none'" title="Close">&times;</span>
                         <h1> SIGN UP </h1>
                         <p>
-                            <label for="name" class="name"> Name</label>
-                            <input id="name" name="namesignup" required="required" type="text" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" title="User must contain some meaningfull name"/>
+                            <label for="emailsignup" class="youmail" > E-mail Id</label>
+                            <input id="emailsignup" name="emailsignup" required="required" type="text" placeholder=""  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="youremail@email.com"/>
+                        </p>
+                        <p>
+                            <label for="fname" class="name">First Name</label>
+                            <input id="name" name="fnamesignup" required="required" type="text" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" title="User must contain some meaningfull name"/>
+                        </p>
+                        <p>
+                            <label for="lname" class="name">Last Name</label>
+                            <input id="name" name="lnamesignup" type="text" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" title="User must contain some meaningfull name"/>
                         </p>
                         <!-- <p>
                             <label for="usernamesignup" class="uname"> Username</label>
                             <input id="usernamesignup" name="usernamesignup" required="required" type="text" maxlength="6" pattern="[A-Z]{4}[0-9]{2}" title="Username must contain atleast 4 Capital letter from A-Z and 2 number from 0-9 & starts with Capital letter"/>
                         </p> -->
-                        <p>
-                            <label for="emailsignup" class="youmail" > E-mail Id</label>
-                            <input id="emailsignup" name="emailsignup" required="required" type="text" placeholder=""  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="youremail@email.com"/>
-                        </p>
                         <p>
                             <label for="passwordsignup" class="youpasswd" > Password </label>
                             <input id="passwordsignup" name="passwordsignup" autocomplete="new-password" required="required" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"/>
