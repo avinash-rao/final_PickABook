@@ -24,7 +24,7 @@ def categoryBooks(request, category_name):
         return HttpResponse("<h1> No category with name "+ category_name +" </h1>")
 
     genre = Genre.objects.get(pk=category_name)
-    books = genre.book_set.all()
+    books = genre.book_set.filter(sold=False)
     context = {'genre':genre, 'books':books}
     print("Displaying category page")
     return render(request, 'books/categorybooks.html', context)
