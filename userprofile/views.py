@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from . import forms
+from books.models import Order
 
 # Create your views here.
 #deshboard page
@@ -29,6 +30,13 @@ def myprofile(request):
         # u=User.objects.get(id=request.GET['userid'])
         u = request.user
         return render(request,'userprofile/userprofile.html',{'user':u})
+
+def myorders(request):
+    user = request.user
+    orders = Order.objects.filter(user_id=user.id).select_related('book_id').order_by('date')
+    print(orders)
+    context = {'orders':orders}
+    return render(request, 'userprofile/myorders.html', context)
 
 @login_required(login_url="/login/")
 def logoutUser(request):

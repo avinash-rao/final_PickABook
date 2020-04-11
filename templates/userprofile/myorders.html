@@ -1,0 +1,40 @@
+{% extends "../base.html" %}
+{% load static %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/myorders.min.css' %}">
+{% endblock %}
+
+{% block body %}
+  {% if orders %}
+  <h1>Your orders</h1>
+  <div class="orders">
+  {% for order in orders %}
+      <div class="order">
+          {% if order.book_id.image %}
+            <img src="{{order.book_id.image.url}}" alt="" width="50px">
+          {% else %}
+            <img src="{% static 'images/logo1.png' %}" alt="" width="50px">
+          {% endif %}
+
+          <div class="book-text">
+            <p class="title">{{order.book_id.title}}</p>
+            <p class="author">by {{order.book_id.author}}</p>
+            <p class="publisher">{{order.book_id.publisher}}</p>
+            <p>Purchase date: {{order.date}}</p>
+            <p class="selling-price">₹{{order.book_id.selling_price}}</p>
+            <p class="actual-price">₹{{order.book_id.actual_price}}</p>
+          </div>
+
+          <div class="user-text">
+            <p>Seller: {{order.book_id.user_id.first_name}}</p>
+            <p>Email: {{order.book_id.user_id.email}}</p>
+            <p></p>
+          </div>
+      </div>
+  {% endfor %}
+  </div>
+  {% else %}
+  <h1>You haven't placed any order yet.</h1>
+  {% endif %}
+{% endblock %}

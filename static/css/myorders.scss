@@ -1,0 +1,71 @@
+.orders {
+
+  margin-top: 20px;
+
+  .order {
+    // display: block;
+    position: relative;
+    clear: both;
+    height: 218px;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+
+  img {
+    width: 185px;
+    height: 218px;
+    float: left;
+  }
+
+  .book-text {
+    float: left;
+    padding-top: 10px;
+    padding-left: 50px;
+    height: 218px;
+
+    .title {
+      font-family: 'Baloo Thambi 2', cursive;
+      font-size: 2.2em;
+      color: black;
+      cursor: pointer;
+      padding: 10px 0px;
+      position: relative;
+    }
+    .author {
+      font-family: 'Gotu', sans-serif;
+      font-size: 1.2em;
+      position: relative;
+      // margin-left: 50px;
+    }
+    .publisher {
+      font-family: 'Sen', sans-serif;
+      font-size: 1em;
+    }
+    .selling-price {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 1.5em;
+      float: left;
+      position: absolute;
+      bottom: 0;
+      font-weight: bold;
+    }
+    .actual-price {
+      font-family: 'Inria Sans', sans-serif;
+      text-decoration: line-through;
+      font-size: 1.2em;
+      float: left;
+      position: absolute;
+      bottom: 0;
+      margin-left: 100px;
+    }
+  }
+
+  .user-text {
+    float: left;
+    padding-top: 10px;
+    padding-left: 90px;
+    height: 218px;
+
+
+  }
+}
