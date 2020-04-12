@@ -16,12 +16,13 @@
 
     <p class="title">{{book.title}}</p>
     <p class="author">by {{book.author}}</p>
-    <p class="publisher">{{book.publisher}}</p>
+    <p class="publisher">Publisher: {{book.publisher}}</p>
     <p class="selling-price">₹{{book.selling_price}}</p>
     <p class="actual-price">₹{{book.actual_price}}</p>
+
     <br>
-    <p>Seller: {{book.user_id.first_name}}</p>
-    <p>Email: {{ book.user_id.email }}</p>
+    <p class="seller">Seller: {{book.user_id.first_name}}</p>
+    <p class="seller">Email: {{ book.user_id.email }}</p>
   </div>
   {% if user.is_authenticated %}
   <button onclick="location.href = '{% url 'order-book' book_id=book.id %}';"  type="button" class=".buy" name="button">Buy Now</button>

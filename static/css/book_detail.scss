@@ -7,44 +7,61 @@
 }
 
 .image {
-  width: 230px;
+  width: 280px;
   height: 346px;
   float: left;
   margin-right: 50px;
 }
 
 .title {
-  font-family: 'Baloo Thambi 2', cursive;
+  font-family: 'Georgia', serif;
+  // color: #E90 !important;
   font-size: 2.2em;
-  color: black;
+  color: #333;
   // cursor: pointer;
-  padding: 15px 0px;
+  padding-top: 15px;
+
   position: relative;
 }
 .author {
-  font-family: 'Gotu', sans-serif;
-  font-size: 1.2em;
+  font-family: 'Times New Roman';
+  font-size: 1.4em;
   position: relative;
+  font-style: italic;
+  font-weight: 600;
   // margin-left: 50px;
 }
 .publisher {
-  font-family: 'Sen', sans-serif;
-  font-size: 1em;
+  font-family: 'Georgia';
+  font-size: 1.2em;
+  margin-top: 20px;
 }
 .selling-price {
   font-family: 'Quicksand', sans-serif;
   font-size: 1.5em;
-  // float: left;
+  float: left;
   // position: absolute;
   // bottom: 0;
   font-weight: bold;
+  margin-top: 15px;
+
 }
 .actual-price {
   font-family: 'Inria Sans', sans-serif;
   text-decoration: line-through;
   font-size: 1.2em;
+  margin-left: 20px;
+  margin-top: 20px;
   // float: left;
   // position: absolute;
   // bottom: 0;
-  margin-left: 100px;
+  // margin-left: 100px;
+}
+
+.seller {
+  font-weight: 600;
+  font-family: 'Lucida Console';
+  font-size: 16px;
+  color: #505;
+  // margin-top: 15px;
 }
