@@ -6,6 +6,7 @@ from django.contrib import messages
 from django.urls import reverse
 from django.contrib import messages
 from django.db.models import Count, Q
+from django.core.mail import send_mail
 
 from django.contrib.auth.decorators import login_required
 from .models import Book, Genre, Order
@@ -79,6 +80,13 @@ def order(request, book_id):
     Order.objects.create(user_id=u, book_id=book, total=total)
     book.sold = True
     book.save()
+    send_mail(
+    'PickABook | Order placed successfully ',
+    'We would love to inform you that your order has been successfully placed and would be reaching you soon.',
+    'rahulgeorge0009@gmail.com',
+    ['pavinashrao9540@gmail.com',],
+    fail_silently=False,
+    )
     messages.error(request, 'Your order has been placed')
     return HttpResponseRedirect(reverse('index'))
 
