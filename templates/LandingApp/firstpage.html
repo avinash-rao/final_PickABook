@@ -304,7 +304,8 @@
     <div class="course-category">
       <a href="books/category-{{category.name}}" style="text-decoration: none;">
         <div class="categories1">
-         <img src="{% static  'images/categories/cate.jpg' %}" alt="" width="370px" height="200px">
+         <!-- <img src="{% static  'images/categories/cate.jpg' %}" alt="" width="370px" height="200px"> -->
+         <img src="{{ category.image.url}}" alt="" width="380px" height="200px">
          <div class="ci-text">
 
             <h5>{{ category.name }}</h5>

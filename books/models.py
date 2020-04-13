@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 class Genre(models.Model):
     """Model representing a book genre."""
     name = models.CharField(max_length=200, help_text='Enter a book genre (e.g. Science Fiction)', primary_key=True)
+    image = models.ImageField(upload_to='category_images', null=True)
 
     def __str__(self):
         """String for representing the Model object."""
@@ -33,7 +34,7 @@ class Book(models.Model):
     user_id = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     sold = models.BooleanField(default=False)
     date = models.DateField(auto_now_add=True)
-    
+
     def __str__(self):
         """String for representing the Model object."""
         return self.title
