@@ -7,7 +7,7 @@
 
 {% block body %}
   {% if orders %}
-  <h1>Your orders</h1>
+  <br><h1>Your orders</h1><br>
   <div class="orders">
   {% for order in orders %}
       <div class="order">
@@ -32,6 +32,7 @@
             <p></p>
           </div>
       </div>
+      <hr>
   {% endfor %}
   </div>
   {% else %}

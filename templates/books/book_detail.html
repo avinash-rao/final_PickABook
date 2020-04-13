@@ -6,27 +6,33 @@
 {% endblock %}
 
 {% block body %}
-
   <div class="content">
-    {% if book.image %}
+    <div class="book-image">
+      {% if book.image %}
       <img src="{{book.image.url}}" class="image" alt="" width="50px">
-    {% else %}
+      {% else %}
       <img src="{% static 'images/logo1.png' %}" class="image" alt="" width="50px">
+      {% endif %}
+    </div>
+    <!-- <div class="content"> -->
+    <div class="detail">
+      <p class="title">{{book.title}}</p>
+      <p class="author">By {{book.author}}</p>
+      <p class="publisher">Publisher: {{book.publisher}}</p>
+      <p class="selling-price">₹{{book.selling_price}}</p>
+      <p class="actual-price">₹{{book.actual_price}}</p><br>
+      <p class="language">Language: {{book.language}}</p>
+      <p class="isbn">ISBN: {{ book.isbn }}</p>
+      <hr>
+    </div>
+    <div class="user-detail">
+      <p class="seller">Seller: {{book.user_id.first_name}}</p>
+      <p class="seller">Email: {{ book.user_id.email }}</p>
+    {% if user.is_authenticated %}
+    <button onclick="location.href = '{% url 'order-book' book_id=book.id %}';"  type="button" class=".buy" name="button">Buy Now</button>
+    {% else %}
+    <button onclick="location.href = '{% url 'index' %}';" type="button" name="button">Login to buy</button>
     {% endif %}
-
-    <p class="title">{{book.title}}</p>
-    <p class="author">by {{book.author}}</p>
-    <p class="publisher">Publisher: {{book.publisher}}</p>
-    <p class="selling-price">₹{{book.selling_price}}</p>
-    <p class="actual-price">₹{{book.actual_price}}</p>
-
-    <br>
-    <p class="seller">Seller: {{book.user_id.first_name}}</p>
-    <p class="seller">Email: {{ book.user_id.email }}</p>
   </div>
-  {% if user.is_authenticated %}
-  <button onclick="location.href = '{% url 'order-book' book_id=book.id %}';"  type="button" class=".buy" name="button">Buy Now</button>
-  {% else %}
-  <button onclick="location.href = '{% url 'index' %}';" type="button" name="button">Login to buy</button>
-  {% endif %}
+  </div>
 {% endblock %}

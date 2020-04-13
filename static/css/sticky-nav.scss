@@ -6,7 +6,7 @@
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  background-color: yellow;
+  background: linear-gradient(to left, #EF3B36, #eee);
   padding: 10px;
   padding-left: 7%;
   padding-right: 7%;
@@ -33,14 +33,13 @@
 // Search bar style
 .search {
 
-    width: 430px;
+    width: 530px;
     padding-top: 0px;
     display: inline-block;
     &__input {
         width: 100%;
         padding: 12px 24px;
 
-        background-color: transparent;
         transition: transform 250ms ease-in-out;
         font-size: 14px;
         line-height: 18px;
