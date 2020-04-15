@@ -7,6 +7,6 @@ urlpatterns=[
     url('register',views.register, name='register'),
     # url('contact',views.contact, name='contact'),
     url('about',views.about, name='about'),
-    url('Reset-password',views.ChangePassword, name='changePassword'),
-    url('Generate-password',views.GeneratePassword, name='generatePassword'),
+    # url('Reset-password',views.resetPassword, name='reset-password'),
+    # url('Generate-password',views.GeneratePassword, name='generatePassword'),
 ]
