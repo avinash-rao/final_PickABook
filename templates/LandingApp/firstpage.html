@@ -3,14 +3,9 @@
 {% load custom_tags %}
 <html lang="en" dir="ltr">
   <head>
-    <!-- meta tag is used for control the size of page -->
     <meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- end meta tag-->
-
-    <!-- css , javascript ,font link-->
   	<link rel="stylesheet" href="{%static 'css/font-awesome.min.css' %}"/>
-
     <link href="{%static 'images/favicon1.jpg' %}" rel="shortcut icon"/>
     <link rel="stylesheet" href="{%static 'css/login.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/animate-custom.css' %}" />
@@ -19,15 +14,9 @@
     <link rel="stylesheet" href="{% static 'css/review-section.css' %}">
     <script  type="text/javascript" charset="utf-8" src="{%static '/javascript/myscripts.js'%}"></script>
     <script type="text/javascript" charset="utf-8" src="{%static  '/javascript/validate.js' %} "></script>
-
-   <!-- end link-->
    <title>PickABook | Welcome to PickABook</title>
-
 </head>
 
-<!--end head -- >
-
-<!-- start body -->
 <body>
   <!-- start  header -->
    <header class="header">
@@ -38,10 +27,7 @@
         <ul>
               <li><a href="">Home</a></li>
               <li><a href="about" class="drp">About us</a></li>
-
               <li><a href="books" class="drp" >Books</a></li>
-
-              <!-- <li><a href="blog.html" class="drp">News</a></li> -->
               <li><a href="#footer" class="drp">Contact</a></li>
               {% if user.is_authenticated %}
               <div class="dr">
@@ -59,10 +45,6 @@
               {%endif%}
         </ul>
      </nav>
-     <!--<div class="nav-search">
-       <input type="search" placeholder="Search...">
-       <div class="search"></div>
-     </div> -->
                     <!-- shows server error -->
                         {% if messages %}
                           {% for message in messages %}
@@ -78,14 +60,8 @@
                           {% endfor %}
                       {% endif %}
                         <!--end server -->
-
-
-    <!--Login Modal-->
-
-
     <!-- The Modal -->
 <div id="myModal" class="modal">
-
   <!-- Modal content -->
   <div class="modal-content animate">
    <!--login start-->
@@ -101,25 +77,13 @@
                             <label for="password" class="youpasswd"> Password </label>
                             <input id="password" autocomplete="new-password" name="password"  required="required" type="password" placeholder="" onblur="checkPass();" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" />
                         </p>
-
-                        {% comment %}
-                        <p class="keeplogin">
-                          <input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" />
-                          <label for="loginkeeping">Keep me logged in</label>
-                        </p>
-                        <a href="{% url 'reset-password' %}" style="color: #fff; padding: 1.3rem 0 0 0; float: left">Forgot Passsword</a>
-                        {% endcomment %}
-
                      <p class="login button">
                         <button type="submit">LOGIN</button>
                     </p>
-
                     </form>  </div>
-
 </div>
 <!--Login form code-->
 <div id="myModal1" class="modal">
-
   <!-- Modal content -->
   <div id="modal" class="modal-content animate">
    <!--login start-->
@@ -139,10 +103,6 @@
                             <label for="lname" class="name">Last Name</label>
                             <input id="name" name="lnamesignup" type="text" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" title="User must contain some meaningfull name"/>
                         </p>
-                        <!-- <p>
-                            <label for="usernamesignup" class="uname"> Username</label>
-                            <input id="usernamesignup" name="usernamesignup" required="required" type="text" maxlength="6" pattern="[A-Z]{4}[0-9]{2}" title="Username must contain atleast 4 Capital letter from A-Z and 2 number from 0-9 & starts with Capital letter"/>
-                        </p> -->
                         <p>
                             <label for="passwordsignup" class="youpasswd" > Password </label>
                             <input id="passwordsignup" name="passwordsignup" autocomplete="new-password" required="required" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"/>
@@ -151,21 +111,11 @@
                             <label for="passwordsignup_confirm" class="youpasswd"> Confirm Password </label>
                             <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"/>
                         </p>
-
                          <button type="submit">SIGN UP</button>
-
-
                     </form>
                  <!--signup end-->
-
   </div>
-
 </div>
-
-
-<!-- hero section-->
-
-
 <div class="text">
 <h2> Get Used Books at Best Price </h2>
 <p class="p-line">Ever wanted to buy a book but could not because it was too expensive?
@@ -186,118 +136,8 @@
 <div class="course">
   <h2>Our Book Categories</h2>
 </div>
-<!--end hero  section-->
-
-
 
 <!-- course categorie-->
-{% comment %}
-<div class="course-categorie">
-<table>
-<tr>
-  {% with i=1 %}
-
-  {% for category in categories %}
-
-    {% ifequal i 4 %}
-      </tr>
-      <tr>
-      {{ i|update_variable:1 }}
-    {% endifequal %}
-
-    <td>
-      <a href="books/category-{{category.name}}" style="text-decoration: none;">
-        <div class="categories1">
-         <img src="{%static  'images/categories/1.jpg' %}" alt="">
-         <div class="ci-text">
-          <h5>{{ category.name }}</h5>
-          <span>No. of books</span>
-         </div>
-        </div>
-      </a>
-    </td>
-    {{ i | add:1 }}
-  {% endfor %}
-  {% endwith %}
-</tr>
-  <!-- End section tag here -->
-
-<td>
-  <a href="Course/c" style="text-decoration: none;">
-  <div class="categories1">
-     <img src="{%static  'images/categories/1.jpg' %}" alt="">
-      <div class="ci-text">
-        <h5>Complete C Programming</h5>
-        <span>120 Lectures</span>
-        </div>
-      </div>
-    </a>
-</td>
-
- <td>
-   <a href="Course/python" style="text-decoration: none;">
-        <div class="categories1">
-           <img src="{%static  'images/categories/2.jpg' %}" alt="">
-            <div class="ci-text">
-              <h5>Python for Everybody</h5>
-              <span>60 Lectures</span>
-            </div>
-        </div>
-   </a>
-</td>
-         <td>
-            <a href="Course/java" style="text-decoration: none;">
-              <div class="categories1">
-                 <img src="{%static  'images/categories/3.jpg' %}" alt="">
-                  <div class="ci-text">
-                    <h5>Core Java</h5>
-                    <span>140 Lectures</span>
-                    </div>
-            </div>
-          </a>
-<td>
-</tr>
-
-  <tr>
-       <td>
-          <a href="Course/java" style="text-decoration: none;">
-           <div class="categories1">
-             <img src="{%static  'images/categories/4.jpg' %}" alt="">
-              <div class="ci-text">
-                <h5>IT Development</h5>
-                <span>120 Courses</span>
-                </div>
-        </div>
-      </a>
-</td>
-      <td>
-         <a href="#" style="text-decoration: none;">
-        <div class="categories1">
-           <img src="{%static  'images/categories/5.jpg' %}" alt="">
-            <div class="ci-text">
-              <h5>IT Development</h5>
-              <span>120 Courses</span>
-              </div>
-      </div>
-    </a>
-</td>
-
-  <td>
-   <a href="#" style="text-decoration: none;">
-     <div class="categories1">
-         <img src="{%static  'images/categories/6.jpg' %}" alt="">
-          <div class="ci-text">
-            <h5>IT Development</h5>
-            <span>120 Courses</span>
-             </div>
-           </a>
-       </td>
-  </tr>
-</table>
-</div>
-
-{% endcomment %}
-
 <div class="course-categories">
   {% for category in categories %}
     <div class="course-category">
@@ -306,70 +146,33 @@
          <!-- <img src="{% static  'images/categories/cate.jpg' %}" alt="" width="370px" height="200px"> -->
          <img src="{{ category.image.url}}" alt="" width="380px" height="200px">
          <div class="ci-text">
-
             <h5>{{ category.name }}</h5>
             <span>{{ category.book_count }}</span>
-
          </div>
         </div>
       </a>
     </div>
   {% endfor %}
 </div>
-
-
 <!--course categorie end -->
 
-<!-- Teacher signup section -->
-{% comment %}
-<div class="full-section">
-<div class="signup-div">
-  <h2>Sign up to become a Seller</h2>
-  <p>Become a seller and easily sell books at desired price.<br> Get the worth of your books.</p>
-  <div class="form-div">
-    <form action="teacher" class="signup-form" method="post">
-      {% csrf_token %}
-      <input type="text" placeholder="Your Name" name="tname" required pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$" title="User must contain some meaningfull name" >
-      <input type="text" placeholder="Your E-mail" name="temail" required  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="youremail@email.com">
-      <input type="text" placeholder="Your Phone" name="tphone" required pattern="[6-9]{1}[0-9]{9}" title="Foreg. 9513871504" maxlength="10">
-      <input type="submit" value="submit" class="site-btn">
-    </form>
-  </div>
-</div>
-<div class="img-div"> </div>
-</div>
-{% endcomment %}
-
-<!-- end-->
-<!-- fotter section-->
-
-
-<!-- review section start -->
 {% include "../review-section.html" %}
-<!-- review section end -->
+<!-- fotter section-->
 <div class="my-footer" id="footer">
-
     <div class="footer-logo">
        <img src="{%static 'images/logo.png' %}" alt="stie-logo" width="40px">
     </div>
-
-    <div class="container1"><a href="#"><b>• Privacy Policy</a> <br><p></p> <a href="#">• Terms & Conditions</b></a>
-    </div>
-
+    <div class="container1"><a href="#"><b>• Privacy Policy</a> <br><p></p> <a href="#">• Terms & Conditions</b></a></div>
     <div class="container2">
        <a href="https://www.facebook.com" style="margin-right: 40px"><img src="{%static 'images/fotter/facebook.png' %}" alt=""></a>
        <a href="https://www.twitter.com" style="margin-right: 40px"><img src="{%static 'images/fotter/twitter.png' %}" alt=""></a>
        <a href="https://www.linkedin.com"><img src="{%static 'images/fotter/linkedin.png' %}" alt=""></a>
     </div>
-
-    <div class="container-footer"><b>Copyright &copy; 2020 PickABook. All right reserved</b>
-    </div>
-
-    <div class="container-footer1"><b>Support & Feedback: pickabook@email.com</b>
-    </div>
-
+    <div class="container-footer"><b>Copyright &copy; 2020 PickABook. All right reserved</b></div>
+    <div class="container-footer1"><b>Support & Feedback: pickabook@email.com</b></div>
 </div>
 <!-- end footer-->
+
 <script>
 // Get the modal
 var modal = document.getElementById('myModal');
@@ -393,10 +196,8 @@ window.onclick = function(event) {
   }
 }
 </script>
-
 <!-- flickity script -->
 <script src="{% static 'javascript/flickity-docs.min.js' %}"></script>
-
 </body>
 <!-- end body -->
 </html>

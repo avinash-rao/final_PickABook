@@ -7,7 +7,6 @@ from django.urls import reverse
 from django.contrib import messages
 from django.db.models import Count, Q
 from django.core.mail import send_mail
-
 from django.contrib.auth.decorators import login_required
 from .models import Book, Genre, Order
 from .forms import BookForm
@@ -19,12 +18,10 @@ def bookss(request):
     return render(request,'books/bookss.html', context)
 
 def categoryBooks(request, category_name):
-    # return HttpResponse("<h1>All the books of a particular category ("+ category_name +") will be displayed here.</h1>")
     genre = Genre.objects.filter(pk=category_name).exists()
     if (genre == False):
         print("not found")
         return HttpResponse("<h1> No category with name "+ category_name +" </h1>")
-
     genre = Genre.objects.get(pk=category_name)
     books = genre.book_set.filter(sold=False)
     context = {'genre':genre, 'books':books}
@@ -44,7 +41,6 @@ def addBook(request):
             book.save()
             # form.save()
             print('New book Form submitted')
-
             return HttpResponseRedirect(reverse('books'))
         else:
             print("Invalid form")
@@ -52,18 +48,15 @@ def addBook(request):
     # if a GET (or any other method) we'll create a blank form
     else:
         form = BookForm()
-
     return render(request, 'books/addbook.html', {'form': form})
 
 def book_detail(request, book_id):
     #add if condition or exists function
     print(book_id, flush=True)
-
     #first checking if there is book of the mentioned id
     book = Book.objects.filter(pk=book_id).exists()
     if (book == False):
         return HttpResponse("<h1> No book with id "+ book_id +" </h1>")
-
     book = Book.objects.get(pk=book_id)
     context = {'book':book, }
     return render(request, 'books/book_detail.html', context)
@@ -73,7 +66,6 @@ def order(request, book_id):
     book = Book.objects.filter(pk=book_id).exists()
     if (book == False):
         return HttpResponse("<h1> No book with id "+ book_id +" </h1>")
-
     book = Book.objects.get(pk=book_id)
     u = request.user
     total = book.actual_price
@@ -93,19 +85,12 @@ def order(request, book_id):
 def book_search(request):
      if request.method == 'GET':
         query= request.GET.get('q')
-
-        # submitbutton= request.GET.get('submit')
-
         if query is not None:
-            # title_lookups= Q(title__icontains=query) | Q(content__icontains=query)
             title_lookups= Q(title__icontains=query)
             author_lookups = Q(author__icontains=query)
 
-            # results = Post.objects.filter(lookups).distinct()
             title_results = Book.objects.filter(title_lookups).distinct()
             author_results = Book.objects.filter(author_lookups).distinct()
-
-            # context={'results': results, 'submitbutton': submitbutton}
             context = {'title_results': title_results, 'author_results': author_results}
             return render(request, 'books/search.html', context)
         else:

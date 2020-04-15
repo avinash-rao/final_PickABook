@@ -7,7 +7,6 @@ from django.contrib.auth.decorators import login_required
 from . import forms
 from books.models import Order
 
-# Create your views here.
 #deshboard page
 @login_required(login_url="/login/")
 def dashboard(request):
@@ -27,7 +26,6 @@ def edit(request):
 
 @login_required(login_url="/login/")
 def myprofile(request):
-        # u=User.objects.get(id=request.GET['userid'])
         u = request.user
         return render(request,'userprofile/userprofile.html',{'user':u})
 
