@@ -47,7 +47,7 @@
                  <a href="#footer" class="drp">Contact</a>
                  {% if user.is_authenticated %}
                  <div class="dr">
-                   <a  onclick="myFunction()" class="d-btn" data-toggle="dropdown">{{ user.username }} <span>▼</span> </a>
+                   <a  onclick="myFunction()" class="d-btn" data-toggle="dropdown">{{ user.first_name }} <span>▼</span> </a>
                    <div id="my" class="drops">
                      <a id="drp" href="{% url 'myprofile' %}">My Profile</a></li>
                      <a id="drp" href="{% url 'myorders' %}">Order History</a></li>
@@ -66,7 +66,7 @@
 
          {% comment %}
          <div class="dropdown">
-            <a class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">{{user.email}}
+            <a class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">{{user.first_name}}
             <span class="caret"></span></a>
             <ul class="dropdown-menu">
                <li><a href="profile/myprofile?userid={{user.id}}">My Profile</a></li><p></p>

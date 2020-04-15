@@ -26,10 +26,14 @@ def populate():
             {'mail':'qureshiyusuff@gmail.com', 'first_name':'Yousuf', 'last_name':'Qureshi'},
             {'mail':'wahid786ali007@gmail.com', 'first_name':'Wahid', 'last_name':'Ali'},
           ]
+
+    books = [
+            {''}
+            ]
     # for user in users:
     #     addUser(user)
 
-    
+
 
 def addUser(obj):
     u = User.objects.create_user(username=obj['mail'],

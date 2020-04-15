@@ -45,7 +45,7 @@
               <li><a href="#footer" class="drp">Contact</a></li>
               {% if user.is_authenticated %}
               <div class="dr">
-                <a  onclick="myFunction()" class="d-btn">{{user.username}} <span>▼</span> </a>
+                <a  onclick="myFunction()" class="d-btn">{{user.first_name}} <span>▼</span> </a>
                 <div id="my" class="drops">
                   <a id="drp" href="profile">My Profile</a></li>
                   <a id="drp" href="{% url 'myorders' %}">Order History</a></li><br>
@@ -109,7 +109,7 @@
                         </p>
                         <a href="{% url 'reset-password' %}" style="color: #fff; padding: 1.3rem 0 0 0; float: left">Forgot Passsword</a>
                         {% endcomment %}
-                        
+
                      <p class="login button">
                         <button type="submit">LOGIN</button>
                     </p>
