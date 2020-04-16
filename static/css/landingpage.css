@@ -20,134 +20,15 @@ transition: animatezoom 0.5s;
 	margin:0;
 }
 
-/* Search bar start */
-@import url("https://fonts.googleapis.com/css?family=Inconsolata:700");
-.nav-search {
-  position: absolute;
-  margin: 0;
-  top: 45px;
-	/* left: 0; */
-  right: 40px;
-  bottom: 0;
-  width: 300px;
-  height: 100px;
-}
-.nav-search .search {
-  position: absolute;
-  margin: auto;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 80px;
-  height: 80px;
-  background: crimson;
-  border-radius: 50%;
-  transition: all 1s;
-  z-index: 4;
-  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
-}
-.nav-search .search:hover {
-  cursor: pointer;
-}
-.nav-search .search::before {
-  content: "";
-  position: absolute;
-  margin: auto;
-  top: 22px;
-  right: 0;
-  bottom: 0;
-  left: 22px;
-  width: 12px;
-  height: 2px;
-  background: white;
-  transform: rotate(45deg);
-  transition: all .5s;
-}
-.nav-search .search::after {
-  content: "";
-  position: absolute;
-  margin: auto;
-  top: -5px;
-  right: 0;
-  bottom: 0;
-  left: -5px;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  border: 2px solid white;
-  transition: all .5s;
-}
-.nav-search input {
-  font-family: 'Inconsolata', monospace;
-  position: absolute;
-  margin: auto;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 50px;
-  height: 50px;
-  outline: none;
-  border: none;
-  background: crimson;
-  color: white;
-  text-shadow: 0 0 10px crimson;
-  padding: 0 80px 0 20px;
-  border-radius: 30px;
-  box-shadow: 0 0 25px 0 crimson, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
-  transition: all 1s;
-  opacity: 0;
-  z-index: 5;
-  font-weight: bolder;
-  letter-spacing: 0.1em;
-}
-.nav-search input:hover {
-  cursor: pointer;
-}
-.nav-search input:focus {
-  width: 300px;
-  opacity: 1;
-  cursor: text;
-}
-.nav-search input:focus ~ .search {
-  right: -250px;
-  background: #151515;
-  z-index: 6;
-}
-.nav-search input:focus ~ .search::before {
-  top: 0;
-  left: 0;
-  width: 25px;
-}
-.nav-search input:focus ~ .search::after {
-  top: 0;
-  left: 0;
-  width: 25px;
-  height: 2px;
-  border: none;
-  background: white;
-  border-radius: 0%;
-  transform: rotate(-45deg);
-}
-.nav-search input::placeholder {
-  color: white;
-  opacity: 0.5;
-  font-weight: bolder;
-}
-/* Search bar end */
 
 .error{
-
   color: red;
 	font-family: sans-serif;
 	font-weight: bold;
 	border: 1px solid red;
-
 }
 
 .header{
-
   background-repeat: no-repeat;
 	background-size: cover;
 	background-position: top center;
@@ -161,7 +42,6 @@ transition: animatezoom 0.5s;
 	padding-bottom:240px;
   background-image: url('../images/bg.jpg');
 	background-size: auto;
-
 }
 .logo
 {
@@ -204,7 +84,6 @@ margin-top: 50px;
   left:555px;
   bottom: 155px;
 }
-
 
 .text {
 	position: relative;
@@ -251,17 +130,6 @@ img {
 	padding-top: 20px;
 }
 
-
-/* .course-categorie
-{
-	margin-top:750px;
-  position: absolute;
-	top:200px;
-	cursor: pointer;
-	margin-left: 10px;
-	padding-bottom: 100px;
-} */
-
 .course-categories {
 	text-align: center;
 }
@@ -299,7 +167,6 @@ padding: 40px 35px;
 	margin-bottom: 5px;
 }
 
-
 .ci-text h5{
 	font-size:20px;
 	color: #2C3E50;
@@ -318,8 +185,6 @@ padding: 40px 35px;
 .categories1:hover .ci-text span {
 	color: #fff;
 }
-
-
 
 table{
 border-collapse: collapse;
@@ -409,12 +274,9 @@ margin-top: 400px;
 .full-section{
 position: relative;
 background-size: cover;
-/* margin-left:-8px; */
-/* margin-right: 0 auto; */
 color: red;
 width:99.8%;
 height: 900px;
-/* margin-top: 1589px; */
 }
 .signup-div
 {
@@ -425,7 +287,6 @@ width: 630px;
 color: #fff;
 text-align: center;
 background-color:  #d82a4e;;
-
 }
 
 .img-div{
@@ -473,18 +334,12 @@ background-color:  #d82a4e;;
 .signup-form input[type=text]:focus,
 .signup-form input[type=email]:focus
 {
-
 	border-bottom: 2px solid #d82a4e;
 }
 .signup-form input[type=submit]{
-
 	margin-right:170px;
 	margin-top:20px;
 }
-
-
-
-
 
 /*login form*/
 
@@ -508,12 +363,9 @@ input[type=text]:hover, input[type=password]:hover{
     -webkit-transition: border-bottom 0.4s;
 }
 
-
 .h1{
  background: -webkit-linear-gradient(#eee, #333);
   -webkit-background-clip: text;
-
-
 }
 /* Set a style for all buttons */
 button
@@ -535,7 +387,6 @@ button:hover
   background: #FAB87F;
   color: #fff;
 }
-
 
 button:focus
 {
@@ -637,7 +488,6 @@ span.psw
     padding: 8px;
     background-color: aqua;
     border-radius: 20px;
-
 }
 
 /* Add Zoom Animation */
@@ -686,8 +536,6 @@ a:hover
 }
 
 /*  Fotter section*/
-
-
 .my-footer{
 	position: relative;
 		margin-top: 0px;
@@ -701,7 +549,6 @@ a:hover
 
 .container-footer{
 		position: absolute;
-		/* width: 28%; */
 		margin-left: 100px;
 		margin-top: 70px;
 		padding-top: 20px;
@@ -761,9 +608,6 @@ a:hover
 }
 
 /* style for popup*/
-
-
-
 .popup {
 margin: 0px auto;
 padding: 20px;
@@ -790,7 +634,6 @@ position: relative;
 	font-size: 17px;
 	color: #d82a4e;
 	font-family:sans-serif;
-
 }
 .popup .close{
 	font-size: 28px;

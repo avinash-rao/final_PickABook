@@ -73,10 +73,10 @@ def order(request, book_id):
     book.sold = True
     book.save()
     send_mail(
-    'PickABook | Order placed successfully ',
-    'We would love to inform you that your order has been successfully placed and would be reaching you soon.',
+    'PickABook | Order placed successfully',
+    'We would love to inform you that your order has been successfully placed and would be reaching you soon. Ordered book:'+book.title,
     'rahulgeorge0009@gmail.com',
-    ['pavinashrao9540@gmail.com',],
+    [u.email,],
     fail_silently=False,
     )
     messages.error(request, 'Your order has been placed')
