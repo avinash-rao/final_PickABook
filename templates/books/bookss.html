@@ -18,9 +18,9 @@
       <div class="book">
 
         {% if book.image %}
-          <img src="{{book.image.url}}" alt="" width="50px">
+          <img src="{{book.image.url}}" alt="" width="50px" class="book-image">
         {% else %}
-          <img src="{% static 'images/logo1.png' %}" alt="" width="50px">
+          <img src="{% static 'images/logo1.png' %}" alt="" width="50px" class="book-image">
         {% endif %}
 
         <div class="book-text">
@@ -29,6 +29,9 @@
           <p class="publisher">{{book.publisher}}</p>
           <p class="selling-price">₹{{book.selling_price}}</p>
           <p class="actual-price">₹{{book.actual_price}}</p>
+        </div>
+        <div class="book-menu">
+          <img src="{% static 'images/three-dots.svg' %}" alt="">
         </div>
       </div>
       <hr>
