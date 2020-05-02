@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'LandingApp',
     'books',
+    'userprofile',
     'widget_tweaks',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -83,7 +84,7 @@ DATABASES = {
         # 'ENGINE': 'django.db.backends.sqlite3',
         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
+        'NAME': 'documentdb',
         'USER': 'postgres',
         'PASSWORD': '5432',
         'HOST': '127.0.0.1',
