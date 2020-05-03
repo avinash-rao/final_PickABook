@@ -1,0 +1,16 @@
+{% load static %}
+
+<div class="flip-box">
+  <div class="flip-box-inner">
+    <div class="flip-box-front">
+      {% if book.image %}
+        <img src="{{book.image.url}}" alt="" width="50px" class="book-image">
+      {% else %}
+        <img src="{% static 'images/logo1.png' %}" alt="" width="50px" class="book-image">
+      {% endif %}
+    </div>
+    <div class="flip-box-back">
+      <h2>Back Side</h2>
+    </div>
+  </div>
+</div>

@@ -5,6 +5,7 @@
 <title>Books page</title>
 <link rel="stylesheet" href="{% static 'css/bookss.min.css' %}">
 <link rel="stylesheet" href="{% static 'css/sticky-nav.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/book.css' %}">
 {% endblock %}
 
 {% block body_header %}
@@ -17,11 +18,7 @@
     {% for book in books %}
       <div class="book">
 
-        {% if book.image %}
-          <img src="{{book.image.url}}" alt="" width="50px" class="book-image">
-        {% else %}
-          <img src="{% static 'images/logo1.png' %}" alt="" width="50px" class="book-image">
-        {% endif %}
+        {% include "../book.html" %}
 
         <div class="book-text">
           <a class="title" href="{% url 'book_detail' book_id=book.id %}">{{book.title}}</a>
