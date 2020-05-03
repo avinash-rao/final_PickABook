@@ -10,7 +10,11 @@
       {% endif %}
     </div>
     <div class="flip-box-back">
-      <h2>Back Side</h2>
+      {% if book.desc %}
+        <p>{{ book.desc }}</p>
+      {% else %}
+        <p>{{book.title}} is written by {{book.author}} and it is available in {{book.language}} language. Buy it now at just {{book.selling_price}}. </p>
+      {% endif %}
     </div>
   </div>
 </div>
