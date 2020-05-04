@@ -26,6 +26,7 @@ class Book(models.Model):
     author = models.CharField('Author', max_length=40)
     publisher = models.CharField('Publisher', max_length=40)
     isbn = models.CharField('ISBN', max_length=13)
+    desc = models.TextField('Description', max_length=300, blank=True)
     actual_price = models.DecimalField(max_digits=10,decimal_places=2)
     selling_price = models.DecimalField(max_digits=10,decimal_places=2)
     language = models.ForeignKey('Language', on_delete=models.CASCADE, null=True)
